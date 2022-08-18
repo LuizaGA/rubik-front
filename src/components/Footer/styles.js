@@ -41,6 +41,7 @@ export const NomeSite = styled.h2`
   font-size: 2rem;
   margin-left: 0.5rem;
   color: #ffffff;
+  font-family: 'Silkscreen', cursive;
 
   @media only screen and (max-width: 768px) {
     font-size: 1.5rem;
