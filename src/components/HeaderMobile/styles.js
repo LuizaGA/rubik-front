@@ -31,15 +31,14 @@ export const Lista = styled.ul`
 `
 
 export const ItemDestaque = styled.li`
-  font-size: 2.2rem;
-  font-weight: bold;
+  font-size: 2rem;
   text-decoration: none;
   margin-top: 1rem;
   color: #ffffff;
 `
 
 export const Item = styled.li`
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   margin-top: 1rem;
   color: #ffffff;

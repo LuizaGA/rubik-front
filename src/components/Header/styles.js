@@ -25,7 +25,7 @@ export const Logo = styled.img`
 
 export const NomeSite = styled.h2`
   font-size: 2rem;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   color: #ffffff;
   font-family: 'Silkscreen', cursive;
 `
@@ -42,7 +42,7 @@ export const Lista = styled.ul`
 `
 
 export const Item = styled.li`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-decoration: none;
   margin-left: 1.5rem;
   color: #ffffff;

@@ -14,7 +14,7 @@ function HeaderMobile({state}){
       <BtnFechar src="X.png" alt="fechar" onClick={() => closeMenu()}/>
         <Lista>
           <ItemDestaque>Premium</ItemDestaque>
-          <ItemDestaque><LinkWrapper to="/FAQ">Suporte</LinkWrapper></ItemDestaque>
+          <ItemDestaque><LinkWrapper to="/FAQ" style={{fontWeight:700}}>Suporte</LinkWrapper></ItemDestaque>
           <ItemDestaque>Baixar</ItemDestaque>
         </Lista>
         <Lista>
