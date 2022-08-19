@@ -8,10 +8,12 @@ function Header(){
 
   return(
     <ContainerGeral>
-      <Container>
-      <Logo src='/cube.png'alt="logo do site"/>
-      <NomeSite>Rubik</NomeSite>
-      </Container>
+      <LinkWrapper to="/">
+        <Container>
+        <Logo src='/cube.png'alt="logo do site"/>
+        <NomeSite>Rubik</NomeSite>
+        </Container>
+      </LinkWrapper>
       <Container>
       <Lista style={{marginRight: '1rem'}}>
         <Item>Premium</Item>

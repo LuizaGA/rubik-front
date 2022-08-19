@@ -35,6 +35,7 @@ export const ItemDestaque = styled.li`
   text-decoration: none;
   margin-top: 1rem;
   color: #ffffff;
+  font-weight: 700;
 `
 
 export const Item = styled.li`

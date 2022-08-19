@@ -6,10 +6,12 @@ function Footer(){
   return(
     <ContainerGeral>
       <Container>
-        <ContainerLogo>
-          <Logo src="cube.png" alt="logo empresa" />
-          <NomeSite>Rubik</NomeSite>
-        </ContainerLogo>
+        <LinkWrapper to="/">
+          <ContainerLogo>
+            <Logo src="cube.png" alt="logo empresa" />
+            <NomeSite>Rubik</NomeSite>
+          </ContainerLogo>
+        </LinkWrapper>
         <Lista>
           <PrimeiroItem>empresa</PrimeiroItem>
           <Item>Sobre</Item>
