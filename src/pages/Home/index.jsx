@@ -1,6 +1,6 @@
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
-import { ContainerGeral,ImgCubo, TextoSpotify} from './styles'
+import { ContainerGeral, ContainerTexto, ImgCubo, TextoSpotify, TextoDestaque, TextoSecundario, TextoObs, Botao, TextoBotao } from './styles'
 
 
 function Home() {
@@ -10,14 +10,15 @@ function Home() {
     <div>
       <Header />
       <ContainerGeral>
-          <div>
+          <ContainerTexto>
             <TextoSpotify>RUBIK PREMIUM</TextoSpotify>
-            <p>Aproveite 3 mess de Premium por R$ 0,00</p>
-            <p>Curta músicas sem anúncios, ouça no modo offline e muito mais. Cancele quando quiser.</p>
-            <div>
-              <p> aproveite 3 meses grátis</p>
-            </div>
-          </div>
+            <TextoDestaque>Aproveite 3 mess de Premium por R$ 0,00</TextoDestaque>
+            <TextoSecundario>Curta músicas sem anúncios, ouça no modo offline e muito mais. Cancele quando quiser.</TextoSecundario>
+            <Botao>
+              <TextoBotao> aproveite 3 meses grátis</TextoBotao>
+            </Botao>
+            <TextoObs>Somente no plano Individual. Depois, é só R$ 19,90/mês. Sujeito a Termos e Condições. Disponível apenas para quem nunca usou o Premium. Oferta válida até 11 de setembro de 2022.</TextoObs>
+          </ContainerTexto>
           <div>
             <ImgCubo src="cubeMelting.jpg" alt="cubo derretendo" />
           </div>
