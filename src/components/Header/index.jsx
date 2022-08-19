@@ -10,7 +10,7 @@ function Header(){
     <ContainerGeral>
       <LinkWrapper to="/">
         <Container>
-        <Logo src='/cube.png'alt="logo do site"/>
+        <Logo src='/logo.png'alt="logo do site"/>
         <NomeSite>Rubik</NomeSite>
         </Container>
       </LinkWrapper>

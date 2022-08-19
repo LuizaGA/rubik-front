@@ -22,6 +22,7 @@ function Home() {
           <div>
             <ImgCubo src="cubeMelting.jpg" alt="cubo derretendo" />
           </div>
+          
       </ContainerGeral>
       <Footer />
     </div>
