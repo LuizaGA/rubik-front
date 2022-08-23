@@ -105,6 +105,8 @@ export const Botao = styled.div`
 export const TextoBotao = styled.h5`
   font-size: 1rem;
   color: #ffffff;
+  margin: 0.6rem 0rem;
+  font-weight: 500;
 
   @media only screen and (max-width: 426px) {
     font-size: 0.8rem;

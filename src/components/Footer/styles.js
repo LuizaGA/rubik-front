@@ -57,15 +57,16 @@ export const Lista = styled.ul`
 `
 
 export const PrimeiroItem = styled.li`
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 0.8rem;
+  font-weight: 300px;
   letter-spacing: 3px;
   text-decoration: none;
-  color: #ffffff;
+  color: #919496;
   text-transform: uppercase;
+  margin: 0.5rem 0rem;
 
   @media only screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
     letter-spacing: 3px;
   }
 `
@@ -78,6 +79,11 @@ export const Item = styled.li`
 
   @media only screen and (max-width: 426px) {
     margin-top: 1rem;
+  }
+
+  :hover {
+    color: #D95624;
+    cursor: pointer;
   }
 `
 
@@ -98,6 +104,17 @@ export const ContainerFinal = styled.div`
 
 export const ItemPequeno = styled.p`
   font-size: 0.75rem;
-  color: #ffffff;
+  color: #919496;
   margin-right: 1rem;
+
+  :hover {
+    color: #D95624;
+    cursor: pointer;
+  }
+`
+
+export const LinkWrapper = styled.div`
+  :hover {
+    color: #D95624;   
+  }
 `

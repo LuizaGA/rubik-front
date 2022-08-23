@@ -5,7 +5,9 @@ const LinkWrapper = props => {
         <NavLink {...props}
             style={{
                 textDecoration: "none",
-                color: "white"
+                color: "white",
+                cursor: "pointer",
+                hover: "#D95624"
             }}
         />
     );

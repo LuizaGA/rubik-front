@@ -42,10 +42,15 @@ export const Lista = styled.ul`
 `
 
 export const Item = styled.li`
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   margin-left: 1.5rem;
   color: #ffffff;
+  
+  :hover {
+    color: #D95624;
+    cursor: pointer;
+  }
 `
 
 export const Menu = styled.img`
