@@ -165,6 +165,7 @@ export const ThirdTextoDestaque = styled.h3`
   color: #ffffff;
   font-weight: 700;
   margin: 2rem 0;
+  text-align: center;
 
   @media only screen and (max-width: 768px) {
     font-size: 2rem;
@@ -202,6 +203,7 @@ export const TextoSecundario = styled.h5`
 export const ThirdTextoSecundario = styled.h5`
   font-size: 1.2rem;
   color: #ffffff;
+  text-align: center;
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
