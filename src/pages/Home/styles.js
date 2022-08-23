@@ -27,8 +27,8 @@ export const ContainerTexto = styled.div`
 `
 
 export const ImgCubo = styled.img`
-  height: 20rem;
-  border-radius: 1.5rem;
+  height: 30rem;
+  border-radius: 1rem;
 
   @media only screen and (max-width: 1024px) {
     margin: 3rem auto;

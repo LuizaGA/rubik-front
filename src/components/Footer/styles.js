@@ -82,7 +82,7 @@ export const Item = styled.li`
   }
 
   :hover {
-    color: #D95624;
+    color: #3dcf64;
     cursor: pointer;
   }
 `
@@ -108,13 +108,13 @@ export const ItemPequeno = styled.p`
   margin-right: 1rem;
 
   :hover {
-    color: #D95624;
+    color: #3dcf64;
     cursor: pointer;
   }
 `
 
 export const LinkWrapper = styled.div`
   :hover {
-    color: #D95624;   
+    color: #3dcf64;
   }
 `

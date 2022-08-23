@@ -223,7 +223,7 @@ export const TextoObs = styled.h5`
 
 export const Botao = styled.div`
   width: 20rem;
-  background-color: #d95624;
+  background-color: #3dcf64;
   border-radius: 4rem;
   padding: 0.8rem 1rem;
   margin: 4rem 0rem 2.5rem;
@@ -265,7 +265,7 @@ export const Search = styled.div`
     margin-left: 1px;
     height: 2.5rem;
     font-size: 14px;
-    background-image: url('../../public/search.svg');
+    background-image: url('/search.svg');
     background-position: 8px;
     background-repeat: no-repeat;
     background-size: 14px;

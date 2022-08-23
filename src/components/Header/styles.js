@@ -46,9 +46,9 @@ export const Item = styled.li`
   text-decoration: none;
   margin-left: 1.5rem;
   color: #ffffff;
-  
+
   :hover {
-    color: #D95624;
+    color: #3dcf64;
     cursor: pointer;
   }
 `

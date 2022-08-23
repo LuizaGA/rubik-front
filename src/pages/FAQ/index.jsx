@@ -42,15 +42,17 @@ function FAQ() {
       <SecondContainer>
         <table>
           <thead>
-            <th>Ajuda rápida</th>
+            <tr>
+              <th>Ajuda rápida</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
               <td>Não consigo redefinir a senha</td>
               <td>
                 <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_29_15)">
-                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" />
+                  <g clipPath="url(#clip0_29_15)">
+                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" strokeWidth="3" strokeLinecap="round" />
                   </g>
                   <defs>
                     <clipPath id="clip0_29_15">
@@ -64,8 +66,8 @@ function FAQ() {
               <td>Tem algo errado com a minha conta</td>
               <td>
                 <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_29_15)">
-                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" />
+                  <g clipPath="url(#clip0_29_15)">
+                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" strokeWidth="3" strokeLinecap="round" />
                   </g>
                   <defs>
                     <clipPath id="clip0_29_15">
@@ -79,8 +81,8 @@ function FAQ() {
               <td>Não lembro minhas informações de login</td>
               <td>
                 <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_29_15)">
-                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" />
+                  <g clipPath="url(#clip0_29_15)">
+                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" strokeWidth="3" strokeLinecap="round" />
                   </g>
                   <defs>
                     <clipPath id="clip0_29_15">
@@ -94,8 +96,8 @@ function FAQ() {
               <td>Ajuda para entrar com o Facebook</td>
               <td>
                 <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_29_15)">
-                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" />
+                  <g clipPath="url(#clip0_29_15)">
+                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" strokeWidth="3" strokeLinecap="round" />
                   </g>
                   <defs>
                     <clipPath id="clip0_29_15">
@@ -109,8 +111,8 @@ function FAQ() {
               <td>Formas de pagamento</td>
               <td>
                 <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_29_15)">
-                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" />
+                  <g clipPath="url(#clip0_29_15)">
+                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" strokeWidth="3" strokeLinecap="round" />
                   </g>
                   <defs>
                     <clipPath id="clip0_29_15">
@@ -124,8 +126,8 @@ function FAQ() {
               <td>Criar ou entrar em um plano Família</td>
               <td>
                 <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_29_15)">
-                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" />
+                  <g clipPath="url(#clip0_29_15)">
+                    <path d="M5.37164 2.66551L14.0706 12.331C14.2417 12.5212 14.2417 12.8098 14.0706 13L5.37164 22.6655" stroke="#A7A7A7" strokeWidth="3" strokeLinecap="round" />
                   </g>
                   <defs>
                     <clipPath id="clip0_29_15">

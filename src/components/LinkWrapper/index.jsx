@@ -17,7 +17,7 @@ const LinkWrapper = props => {
         <NavLink {...props}
             style={{
                 textDecoration: "none",
-                color: hoverActive ? "#D95624" : "white",
+                color: hoverActive ? "#3dcf64" : "white",
                 cursor: "pointer",
             }}
             onMouseEnter={handleMouseEnter}
