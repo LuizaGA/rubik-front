@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const FirstContainer = styled.div`
   width: 100%;
-  background-color: #19a889;
+  background-color: #0b6e4f;
   padding: 3rem 2rem;
   display: flex;
   flex-direction: row;
@@ -15,27 +15,26 @@ export const FirstContainer = styled.div`
   }
 
   table {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  margin: 2rem 0rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2rem 0rem;
   }
 
   td {
     height: 5rem;
     width: 15rem;
-    background-color: #557BA0;
+    background-color: #df9b6d;
     padding: 1rem;
     color: #ffffff;
     border-radius: 8px;
-    border: 4px solid #19a889;
+    border: 4px solid #0b6e4f;
     font-weight: 600;
   }
 
   td:hover {
     cursor: pointer;
   }
-
 `
 
 export const SecondContainer = styled.div`
@@ -77,12 +76,11 @@ export const SecondContainer = styled.div`
   @media only screen and (max-width: 426px) {
     font-size: 1rem;
   }
-  
+
   @media only screen and (max-width: 1024px) {
     width: 100%;
     padding-left: 4rem;
   }
-
 `
 
 export const ThirdContainer = styled.div`
@@ -225,7 +223,7 @@ export const TextoObs = styled.h5`
 
 export const Botao = styled.div`
   width: 20rem;
-  background-color: #D95624;
+  background-color: #d95624;
   border-radius: 4rem;
   padding: 0.8rem 1rem;
   margin: 4rem 0rem 2.5rem;
@@ -261,21 +259,21 @@ export const Search = styled.div`
   input {
     margin-bottom: 30px;
     width: 45rem;
-    border-radius: 8px ;
-    border:  2px solid #D9D9D9;
+    border-radius: 8px;
+    border: 2px solid #d9d9d9;
     padding-left: 30px;
     margin-left: 1px;
     height: 2.5rem;
     font-size: 14px;
     background-image: url('../../public/search.svg');
     background-position: 8px;
-    background-repeat: no-repeat ;
+    background-repeat: no-repeat;
     background-size: 14px;
   }
 
   :focus {
     border: 2px solid #d9d9d9;
     border-radius: 8px;
-    outline: none;  
+    outline: none;
   }
 `
