@@ -21,6 +21,10 @@ export const BtnFechar = styled.img`
   top: 20px;
   right: 20px;
   height: 2rem;
+  
+  :hover {
+    cursor: pointer;
+  }
 `
 
 export const Lista = styled.ul`
@@ -36,6 +40,11 @@ export const ItemDestaque = styled.li`
   margin-top: 1rem;
   color: #ffffff;
   font-weight: 700;
+
+  :hover {
+    cursor: pointer;
+    color: #3dcf64;
+  }
 `
 
 export const Item = styled.li`

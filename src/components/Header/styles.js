@@ -60,4 +60,8 @@ export const Menu = styled.img`
     display: flex;
     height: 2rem;
   }
+
+  :hover {
+    cursor: pointer;
+  }
 `

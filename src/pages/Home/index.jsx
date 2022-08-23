@@ -16,7 +16,7 @@ function Home() {
             <TextoDestaque>Aproveite 3 meses de Premium por R$ 0,00</TextoDestaque>
             <TextoSecundario>Curta músicas sem anúncios, ouça no modo offline e muito mais. Cancele quando quiser.</TextoSecundario>
             <Botao>
-              <LinkWrapper to="/registration"><TextoBotao> aproveite 3 meses grátis</TextoBotao></LinkWrapper> 
+              <LinkWrapper to="/registration"><TextoBotao>aproveite 3 meses grátis</TextoBotao></LinkWrapper> 
             </Botao>
             <TextoObs>Somente no plano Individual. Depois, é só R$ 19,90/mês. Sujeito a Termos e Condições. Disponível apenas para quem nunca usou o Premium. Oferta válida até 11 de setembro de 2022.</TextoObs>
           </ContainerTexto>
