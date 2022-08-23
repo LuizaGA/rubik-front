@@ -1,14 +1,27 @@
 import { NavLink } from 'react-router-dom';
+import {useState} from 'react';
 
 const LinkWrapper = props => {
+
+    const [hoverActive, setHoverActive] = useState(false);
+
+    const handleMouseEnter = () => {
+        setHoverActive(true);
+    };
+  
+    const handleMouseLeave = () => {
+        setHoverActive(false);
+    };
+
     return (
         <NavLink {...props}
             style={{
                 textDecoration: "none",
-                color: "white",
+                color: hoverActive ? "#D95624" : "white",
                 cursor: "pointer",
-                hover: "#D95624"
             }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         />
     );
 }

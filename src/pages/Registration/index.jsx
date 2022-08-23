@@ -89,7 +89,9 @@ function Registration() {
   return (
     <ContainerGeral>
       <ContainerLogo>
+      <LinkWrapper to="/">
       <Logo src="logo_black.png" alt="logo" />
+      </LinkWrapper>
       <NomeSite>Rubik</NomeSite>
       </ContainerLogo>
       <Texto>Inscreva-se grátis e comece a curtir.</Texto>
