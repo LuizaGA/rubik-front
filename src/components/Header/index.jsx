@@ -18,7 +18,7 @@ function Header(){
       <Lista style={{marginRight: '1rem'}}>
         <Item>Premium</Item>
         <Item><LinkWrapper to="/FAQ">Suporte</LinkWrapper></Item>
-        <Item>Baixar</Item>
+        <Item><LinkWrapper to="/home">Baixar</LinkWrapper></Item>
       </Lista>
       <Lista style={{borderLeft: '1px solid white'}}>
         <Item><LinkWrapper to="/registration">Inscrever-se</LinkWrapper></Item>

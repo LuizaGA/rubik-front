@@ -29,8 +29,8 @@ function Footer(){
         <Lista>
           <PrimeiroItem>links úteis</PrimeiroItem>
           <Item><LinkWrapper to="/FAQ">Suporte</LinkWrapper></Item>
-          <Item>Player da Web</Item>
-          <Item>Aplicativo móvel grátis</Item>
+          <Item><LinkWrapper to="/home">Player da Web</LinkWrapper></Item>
+          <Item><LinkWrapper to="/home">Aplicativo móvel grátis</LinkWrapper></Item>
         </Lista>
       </Container>
       <ContainerVersao>

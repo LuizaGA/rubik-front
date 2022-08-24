@@ -111,6 +111,7 @@ export const Span = styled.span`
 export const InputSubmit = styled.input`
   height: 3.5rem;
   width: 11rem;
+  border: none;
   border-radius: 31rem;
   background-color: #286b45;
   color: white;

@@ -15,7 +15,7 @@ function HeaderMobile({state}){
         <Lista>
           <ItemDestaque>Premium</ItemDestaque>
           <LinkWrapper to="/FAQ"><ItemDestaque>Suporte</ItemDestaque></LinkWrapper>
-          <ItemDestaque>Baixar</ItemDestaque>
+          <LinkWrapper to="/home"><ItemDestaque>Baixar</ItemDestaque></LinkWrapper>
         </Lista>
         <Lista>
           <Item><LinkWrapper to="/registration">Inscrever-se</LinkWrapper></Item>

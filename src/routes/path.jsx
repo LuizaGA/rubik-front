@@ -3,6 +3,7 @@ import FAQ from "../pages/FAQ";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
+import User from "../pages/User";
 
 function Path(){
   return(
@@ -11,6 +12,7 @@ function Path(){
       <Route path="/FAQ" element={<FAQ />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<User />} />
     </Routes>
   )
 }
