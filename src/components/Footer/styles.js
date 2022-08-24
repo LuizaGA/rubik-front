@@ -118,3 +118,15 @@ export const LinkWrapper = styled.div`
     color: #3dcf64;
   }
 `
+export const ContainerVersao = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  p {
+    font-size: 0.75rem;
+    color: #919496;
+  }
+`

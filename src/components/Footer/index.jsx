@@ -1,5 +1,5 @@
 import LinkWrapper from '../LinkWrapper' 
-import { ContainerGeral, Container, ContainerLogo, Logo, NomeSite, Lista , PrimeiroItem, Item, ContainerFinal, ItemPequeno } from './styles'
+import { ContainerGeral, Container, ContainerLogo, Logo, NomeSite, Lista , PrimeiroItem, Item, ContainerFinal, ItemPequeno, ContainerVersao } from './styles'
 
 function Footer(){
 
@@ -33,13 +33,16 @@ function Footer(){
           <Item>Aplicativo móvel grátis</Item>
         </Lista>
       </Container>
-      <ContainerFinal>
-        <ItemPequeno>Legal</ItemPequeno>
-        <ItemPequeno>Centro de Privacidade</ItemPequeno>
-        <ItemPequeno>Política de Privacidade</ItemPequeno>
-        <ItemPequeno>Cookies</ItemPequeno>
-        <ItemPequeno>Sobre Anúncios</ItemPequeno>
-      </ContainerFinal>
+      <ContainerVersao>
+        <ContainerFinal>
+          <ItemPequeno>Legal</ItemPequeno>
+          <ItemPequeno>Centro de Privacidade</ItemPequeno>
+          <ItemPequeno>Política de Privacidade</ItemPequeno>
+          <ItemPequeno>Cookies</ItemPequeno>
+          <ItemPequeno>Sobre Anúncios</ItemPequeno>
+        </ContainerFinal>
+        <p>©2022</p>
+      </ContainerVersao>
     </ContainerGeral>
   )
 }
