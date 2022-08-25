@@ -1,10 +1,16 @@
 import LinkWrapper from '../LinkWrapper' 
-import { ContainerGeral, ContainerItem, ContainerInfo } from './styles'
+import { ContainerGeral, ContainerItem, ContainerInfo, ContainerLogo } from './styles'
 
 function SideBar() {
 
   return (
     <ContainerGeral>
+      <LinkWrapper to="/">
+        <ContainerLogo>
+            <img src="/logo.png" alt="logo so site" />
+            <h2>rubik</h2>
+        </ContainerLogo>
+      </LinkWrapper>
       <div>
         <LinkWrapper to="/">
           <ContainerItem>
