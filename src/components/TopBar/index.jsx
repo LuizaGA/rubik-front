@@ -1,9 +1,11 @@
 import LinkWrapper from '../LinkWrapper' 
 import { useState } from 'react'
-import { ContainerGeral, ContainerLogo, Container, Botao, ContainerMobile, TextoMobileDestaque, TextoMobile } from './styles'
+import { ContainerGeral, ContainerLogo, Container, Botao, ContainerMobile, TextoMobileDestaque, TextoMobile, ContainerUser } from './styles'
 
 function TopBar() {
   const [showMenu, setShowMenu] = useState(false)
+  const [isLogged, setLogged] = useState(true)
+
 
   return (
     <div>
@@ -14,11 +16,19 @@ function TopBar() {
             <h2>rubik</h2>
         </ContainerLogo>
       </LinkWrapper>
-      <Container>
-        <LinkWrapper to="/registration"><p>Inscrever-se</p></LinkWrapper>
-        <LinkWrapper to="/login"><Botao> Entrar </Botao></LinkWrapper>
-        <img src="/bars.png" alt="ícone menu"  onClick={() => setShowMenu(!showMenu)}/>
-      </Container>
+        {isLogged ? 
+        <ContainerUser>
+          <img src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt="foto user"/>
+          <p>Nome user</p>
+        </ContainerUser>
+        : 
+        <Container>
+          <LinkWrapper to="/registration"><p>Inscrever-se</p></LinkWrapper>
+          <LinkWrapper to="/login"><Botao> Entrar </Botao></LinkWrapper>
+          <img src="/bars.png" alt="ícone menu"  onClick={() => setShowMenu(!showMenu)}/>
+        </Container>
+      }
+      
     </ContainerGeral>
     {showMenu && 
     <ContainerMobile>

@@ -1,6 +1,6 @@
 import TopBar from "../../components/TopBar"
 import SideBar from "../../components/SideBar"
-import Playlist from "../../components/Playlist"
+import Playlists from "../../components/Playlists"
 import { ContainerGeral } from './styles'
 
 function User() {
@@ -14,9 +14,9 @@ function User() {
     {id:6, nome: 'Deep Focus', descricao:'Keep calm and focus with ambient and post-rock...', imagem: 'https://i.pinimg.com/originals/59/c0/e6/59c0e66960767fb2905c8c2b8925fb14.jpg'},
     {id:7, nome: 'Instrumental Study', descricao:'A soft music backdrop for your studies', imagem: 'https://static.poder360.com.br/2022/03/Monroe-848x477.jpg'},
     {id:8, nome: 'Mood Booster', descricao:'Get happy with today dose of feel-good songs!', imagem: 'https://i.pinimg.com/originals/59/c0/e6/59c0e66960767fb2905c8c2b8925fb14.jpg'},
-    {id:6, nome: 'Deep Focus', descricao:'Keep calm and focus with ambient and post-rock...', imagem: 'https://i.pinimg.com/originals/59/c0/e6/59c0e66960767fb2905c8c2b8925fb14.jpg'},
-    {id:7, nome: 'Instrumental Study', descricao:'A soft music backdrop for your studies', imagem: 'https://static.poder360.com.br/2022/03/Monroe-848x477.jpg'},
-    {id:8, nome: 'Mood Booster', descricao:'Get happy with today dose of feel-good songs!', imagem: 'https://i.pinimg.com/originals/59/c0/e6/59c0e66960767fb2905c8c2b8925fb14.jpg'},
+    {id:9, nome: 'Deep Focus', descricao:'Keep calm and focus with ambient and post-rock...', imagem: 'https://i.pinimg.com/originals/59/c0/e6/59c0e66960767fb2905c8c2b8925fb14.jpg'},
+    {id:10, nome: 'Instrumental Study', descricao:'A soft music backdrop for your studies', imagem: 'https://static.poder360.com.br/2022/03/Monroe-848x477.jpg'},
+    {id:11, nome: 'Mood Booster', descricao:'Get happy with today dose of feel-good songs!', imagem: 'https://i.pinimg.com/originals/59/c0/e6/59c0e66960767fb2905c8c2b8925fb14.jpg'},
     
   ]
 
@@ -25,8 +25,8 @@ function User() {
       <TopBar />
       <SideBar />
       <ContainerGeral>
-        <h3>Rubik Playlists</h3>
-        <Playlist dados={dados}/>
+        <h2>Rubik Playlists</h2>
+        <Playlists dados={dados}/>
       </ContainerGeral>
     </div>
   )

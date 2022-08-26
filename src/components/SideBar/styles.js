@@ -45,25 +45,30 @@ export const ContainerItem = styled.div`
     font-size: 1rem;
   }
 
-  p:hover {
-    color: #3dcf64;
-    cursor: pointer;
+  img {
+    height: 1rem;
   }
 
   :hover {
     color: #3dcf64;
     cursor: pointer;
-  }
 
-  img {
-    height: 1rem;
+    p {
+      color: #3dcf64;
+      cursor: pointer;
+    }
+
+    img {
+      height: 1.5rem;
+    }
   }
 `
 
 export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin-top: 10rem;
+  /* margin-bottom: 3rem; */
 
   p {
     font-size: 0.7rem;

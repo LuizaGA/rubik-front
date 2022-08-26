@@ -26,6 +26,7 @@ function SideBar() {
           <img src="/library.png" alt="" />
           <p>Sua Biblioteca</p>
         </ContainerItem>
+        <br />
         <ContainerItem>
           <img src="/more.png" alt="" />
           <p>Criar playlist</p>

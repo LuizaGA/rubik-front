@@ -4,6 +4,7 @@ export const ContainerGeral = styled.div`
   width: 100%;
   height: auto;
   background-color: #000000;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -121,5 +122,35 @@ export const TextoMobile = styled.p`
   :hover {
     color: #3dcf64;
     cursor: pointer;
+  }
+`
+
+export const ContainerUser = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  padding: 0.2rem 0.5rem;
+
+  p {
+    color: #ffffff;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+
+  img {
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  :hover {
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `

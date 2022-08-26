@@ -39,14 +39,14 @@ export const ContainerItem = styled.div`
   }
 
   :hover {
-    height: 15.5rem;
+    /* height: 15.5rem;
     width: 12.5rem;
     justify-content: center;
 
     img {
       height: 8rem;
       width: 11rem;
-    }
+    } */
 
     h3 {
       color: #3dcf64;
