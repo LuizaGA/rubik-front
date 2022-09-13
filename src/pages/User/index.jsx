@@ -21,7 +21,7 @@ function User() {
   ]
 
   return (
-    <div >
+    <div style={{height:'100vh', backgroundColor: "#000000"}}>
       <TopBar />
       <SideBar />
       <ContainerGeral>
