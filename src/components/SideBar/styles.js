@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
 export const ContainerGeral = styled.div`
+  min-height: 100vh;
   height: 100%;
+  width: 15rem;
   background-color: #1e1e1e;
   position: fixed;
+  top: 0;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,6 +15,21 @@ export const ContainerGeral = styled.div`
 
   @media only screen and (max-width: 768px) {
     display: none;
+  }
+`
+export const ContainerLogo = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  img {
+    height: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: #ffffff;
+    font-family: 'Silkscreen', cursive;
   }
 `
 
@@ -26,25 +45,30 @@ export const ContainerItem = styled.div`
     font-size: 1rem;
   }
 
-  p:hover {
-    color: #3dcf64;
-    cursor: pointer;
+  img {
+    height: 1rem;
   }
 
   :hover {
     color: #3dcf64;
     cursor: pointer;
-  }
 
-  img {
-    height: 1rem;
+    p {
+      color: #3dcf64;
+      cursor: pointer;
+    }
+
+    img {
+      height: 1.5rem;
+    }
   }
 `
 
 export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin-top: 10rem;
+  /* margin-bottom: 3rem; */
 
   p {
     font-size: 0.7rem;

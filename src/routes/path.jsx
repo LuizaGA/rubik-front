@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import User from "../pages/User";
+import Playlist from "../pages/Playlist";
 
 function Path(){
   return(
@@ -13,6 +14,7 @@ function Path(){
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<User />} />
+      <Route path="/playlist/:id" element={<Playlist />} />
     </Routes>
   )
 }
