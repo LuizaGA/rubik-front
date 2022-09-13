@@ -41,7 +41,7 @@ function Footer(){
           <ItemPequeno>Cookies</ItemPequeno>
           <ItemPequeno>Sobre Anúncios</ItemPequeno>
         </ContainerFinal>
-        <p>©2022</p>
+        <p>©{new Date().getFullYear()}</p>
       </ContainerVersao>
     </ContainerGeral>
   )
