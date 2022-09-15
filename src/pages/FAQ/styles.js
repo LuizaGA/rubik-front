@@ -70,6 +70,10 @@ export const SecondContainer = styled.div`
     font-size: 13px;
   }
 
+  .answer img {
+    width: 12rem;
+  }
+
   tr {
     font-size: 1.2rem;
     color: #bcc4c0;

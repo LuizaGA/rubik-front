@@ -5,6 +5,7 @@ import { FirstContainer, SecondContainer, ThirdContainer, ContainerTexto, ThirdC
 
 import ArrowIcon from "../../../public/arrow-right.svg"
 import ArrowDownIcon from "../../../public/arrow-down.svg"
+import FamilyPlan from "../../../public/plano-familia.webp"
 
 function FAQ() {
 
@@ -200,7 +201,9 @@ function FAQ() {
               <tr className='answer'>
                 <p>O Premium Família é um plano com desconto para até 6 pessoas que moram juntas.</p>
 
-                <p>Como cada membro do plano usa sua própria conta, não é necessário compartilhar uma senha e todo mundo pode manter suas próprias músicas e playlists salvas.                 O Premium Família inclui:</p>
+                <p>Como cada membro do plano usa sua própria conta, não é necessário compartilhar uma senha e todo mundo pode manter suas próprias músicas e playlists salvas.</p>
+                <img src={FamilyPlan}></img>
+                <p>O Premium Família inclui:</p>
 
                 <ul>
                 <li><a>Match</a> – uma playlist compartilhada que combina o seu gosto musical com o de outras pessoas.</li>
