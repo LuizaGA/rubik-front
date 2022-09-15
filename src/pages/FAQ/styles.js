@@ -46,6 +46,40 @@ export const SecondContainer = styled.div`
   justify-content: top;
   align-items: left;
 
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+  ul {
+    list-style-position: inside;
+  }
+
+  li, p {
+    font-weight: 300;
+  }
+
+  b {
+    font-weight: bold;
+  }
+
+  .answer {
+    line-height: 1.4rem;
+    font-size: 13px;
+  }
+
+  tr {
+    font-size: 1.2rem;
+    color: #bcc4c0;
+    align-self: left;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2rem;
+    width: 12rem;
+  }
+
   table thead th {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -237,8 +271,6 @@ export const Botao = styled.div`
 
   :hover {
     cursor: pointer;
-    /* width: 21rem;
-    height: 4.5rem; */
     -webkit-transform: translate(200px, 200px);
     transform: scale(1.1) translate(0%, 0%);
   }
