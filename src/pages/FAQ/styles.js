@@ -237,8 +237,10 @@ export const Botao = styled.div`
 
   :hover {
     cursor: pointer;
-    width: 21rem;
-    height: 4.5rem;
+    /* width: 21rem;
+    height: 4.5rem; */
+    -webkit-transform: translate(200px, 200px);
+    transform: scale(1.1) translate(0%, 0%);
   }
 `
 

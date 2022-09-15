@@ -100,6 +100,12 @@ export const Botao = styled.div`
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
+
+  :hover {
+    cursor: pointer;
+    -webkit-transform: translate(200px, 200px);
+    transform: scale(1.1) translate(0%, 0%);
+  }
 `
 
 export const TextoBotao = styled.h5`
@@ -111,4 +117,5 @@ export const TextoBotao = styled.h5`
   @media only screen and (max-width: 426px) {
     font-size: 0.8rem;
   }
+
 `
