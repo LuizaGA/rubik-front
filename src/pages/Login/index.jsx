@@ -18,7 +18,7 @@ function Login() {
     <ContainerGeral>
       <ContainerLogo>
       <LinkWrapper to="/">
-      <Logo src="src/assets/logo/logo_black.png" alt="logo" />
+      <Logo src="/src/assets/logo/logo_black.png" alt="logo" />
       </LinkWrapper>
       <NomeSite>Rubik</NomeSite>
       </ContainerLogo>

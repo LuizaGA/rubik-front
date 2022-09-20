@@ -16,7 +16,8 @@ export const ContainerItem = styled.div`
   display: flex;
   flex-direction: column;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem; 
+  cursor: pointer;
 
   img {
     height: 7rem;
@@ -39,14 +40,7 @@ export const ContainerItem = styled.div`
   }
 
   :hover {
-    /* height: 15.5rem;
-    width: 12.5rem;
-    justify-content: center;
-
-    img {
-      height: 8rem;
-      width: 11rem;
-    } */
+    background-color: #3C3C3C;
 
     h3 {
       color: #3dcf64;

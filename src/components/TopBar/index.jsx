@@ -12,7 +12,7 @@ function TopBar() {
     <ContainerGeral>
       <LinkWrapper to="/">
         <ContainerLogo>
-            <img src="src/assets/logo/logo.png" alt="logo so site" />
+            <img src="/src/assets/logo/logo.png" alt="logo so site" />
             <h2>rubik</h2>
         </ContainerLogo>
       </LinkWrapper>
@@ -35,7 +35,7 @@ function TopBar() {
     </ContainerGeral>
     {showMenu && 
     <ContainerMobile>
-      <img src="src/assets/icons/X.png" alt="fechar aba menu" onClick={() => setShowMenu(!showMenu)}/>
+      <img src="/src/assets/icons/X.png" alt="fechar" onClick={() => setShowMenu(!showMenu)}/>
       <LinkWrapper to="/login"><TextoMobileDestaque>Entre</TextoMobileDestaque></LinkWrapper>
       <LinkWrapper to="/registration"><TextoMobileDestaque>Inscreva-se</TextoMobileDestaque></LinkWrapper>
       <br/>
