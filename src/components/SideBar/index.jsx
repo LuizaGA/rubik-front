@@ -7,32 +7,32 @@ function SideBar() {
     <ContainerGeral>
       <LinkWrapper to="/">
         <ContainerLogo>
-            <img src="/logo.png" alt="logo so site" />
+            <img src="/src/assets/logo/logo.png" alt="logo so site" />
             <h2>rubik</h2>
         </ContainerLogo>
       </LinkWrapper>
       <div>
         <LinkWrapper to="/">
           <ContainerItem>
-            <img src="/home.png" alt="" />
+            <img id="home" alt="" />
             <p>Início</p>
           </ContainerItem>
         </LinkWrapper>
         <ContainerItem>
-          <img src="/search.png" alt="" />
+          <img id="search" alt="" />
           <p>Buscar</p>
         </ContainerItem>
         <ContainerItem>
-          <img src="/library.png" alt="" />
+          <img id="library" alt="" />
           <p>Sua Biblioteca</p>
         </ContainerItem>
         <br />
         <ContainerItem>
-          <img src="/more.png" alt="" />
+          <img id="playlist" alt="" />
           <p>Criar playlist</p>
         </ContainerItem>
         <ContainerItem>
-          <img src="/heart.png" alt="" />
+          <img id="music" alt="" />
           <p>Músicas Curtidas</p>
         </ContainerItem>
       </div>

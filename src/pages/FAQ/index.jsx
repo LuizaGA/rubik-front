@@ -3,9 +3,9 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { FirstContainer, SecondContainer, ThirdContainer, ContainerTexto, ThirdContainerTexto, ImgCubo, TextoSpotify, TextoDestaque, ThirdTextoDestaque, TextoSecundario, ThirdTextoSecundario, TextoObs, Botao, TextoBotao, Search } from './styles'
 
-import ArrowIcon from "../../../public/arrow-right.svg"
-import ArrowDownIcon from "../../../public/arrow-down.svg"
-import FamilyPlan from "../../../public/plano-familia.webp"
+import ArrowIcon from "../../assets/icons/arrow-right.svg"
+import ArrowDownIcon from "../../assets/icons/arrow-down.svg"
+import FamilyPlan from "../../assets/imagens/plano-familia.webp"
 
 function FAQ() {
 

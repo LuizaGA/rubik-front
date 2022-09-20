@@ -11,7 +11,7 @@ function HeaderMobile({state}){
   return(
     <ContainerGeral>
       <Container>
-      <BtnFechar src="X.png" alt="fechar" onClick={() => closeMenu()}/>
+      <BtnFechar src="src/assets/icons/X.png" alt="fechar" onClick={() => closeMenu()}/>
         <Lista>
           <ItemDestaque>Premium</ItemDestaque>
           <LinkWrapper to="/FAQ"><ItemDestaque>Suporte</ItemDestaque></LinkWrapper>

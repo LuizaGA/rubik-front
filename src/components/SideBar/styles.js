@@ -49,7 +49,28 @@ export const ContainerItem = styled.div`
     height: 1rem;
   }
 
+  #home {
+    content:url('src/assets/icons/home.svg');
+  }
+
+  #search{
+    content:url('src/assets/icons/search-white.svg');
+  }
+
+  #library{
+    content:url('src/assets/icons/library.svg');
+  }
+
+  #playlist{
+    content:url('src/assets/icons/more.svg');
+  }
+
+  #music{
+    content:url('src/assets/icons/heart.svg');
+  }
+
   :hover {
+
     color: #3dcf64;
     cursor: pointer;
 
@@ -58,9 +79,26 @@ export const ContainerItem = styled.div`
       cursor: pointer;
     }
 
-    img {
-      height: 1.5rem;
+    #home{
+      content:url('src/assets/icons/home-green.svg');
     }
+
+    #search{
+      content:url('src/assets/icons/search-green.svg');
+    }
+
+    #library{
+      content:url('src/assets/icons/library-green.svg');
+    }
+
+    #playlist{
+      content:url('src/assets/icons/more-green.svg');
+    }
+
+    #music{
+      content:url('src/assets/icons/heart-green.svg');
+    }
+
   }
 `
 
