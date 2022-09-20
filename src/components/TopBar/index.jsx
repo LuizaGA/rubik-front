@@ -4,7 +4,7 @@ import { ContainerGeral, ContainerLogo, Container, Botao, ContainerMobile, Texto
 
 function TopBar() {
   const [showMenu, setShowMenu] = useState(false)
-  const [isLogged, setLogged] = useState(true)
+  const [isLogged, setLogged] = useState(false)
 
 
   return (
@@ -17,10 +17,13 @@ function TopBar() {
         </ContainerLogo>
       </LinkWrapper>
         {isLogged ? 
-        <ContainerUser>
-          <img src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt="foto user"/>
-          <p>Nome user</p>
-        </ContainerUser>
+        <>
+          <ContainerUser>
+            <img src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt="foto user"/>
+            <p>Nome user</p>
+          </ContainerUser>
+          <img src="/src/assets/icons/bars.png" alt="ícone menu" id="menu" onClick={() => setShowMenu(!showMenu)}/>
+        </>
         : 
         <Container>
           <LinkWrapper to="/registration"><p>Inscrever-se</p></LinkWrapper>

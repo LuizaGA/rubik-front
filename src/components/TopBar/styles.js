@@ -10,6 +10,22 @@ export const ContainerGeral = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
+
+  #menu {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    #menu {
+      display: flex;
+      height: 2rem;
+    }
+
+    #menu:hover {
+      cursor: pointer;
+    }
+  }
 `
 
 export const ContainerLogo = styled.div`
