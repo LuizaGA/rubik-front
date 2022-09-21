@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Container, Botao, ContainerGeral } from './styles';
+import Play from '../../assets/icons/play.svg';
+import Pause from '../../assets/icons/pause.svg';
 
 class Music extends Component {
   // Create state
@@ -23,21 +26,20 @@ class Music extends Component {
     // Change the state of song
       this.setState({ isPlaying: !isPlaying });
   };
-
   render() {
     return (
-      <div>
-        <p>
-          {this.props.song.nome}       
-        </p>
-        <p>{this.props.song.nomeArtista} {this.props.song.album}</p>
-        {/* <p>{this.state.isPlaying ? 
-            "Song is Playing" : 
-            "Song is Paused"}</p> */}
-        <button onClick={this.playPause}>
-          Play | Pause
-        </button>
-      </div>
+      <Container>
+        <ContainerGeral>
+          <Botao onClick={this.playPause}>
+            <img src={this.state.isPlaying  ? Pause : Play }/>
+          </Botao>
+          <div>
+            <p id="musica">{this.props.song.nome}</p>
+            <p id="artista">{this.props.song.nomeArtista} {this.props.song.album}</p>
+          </div>
+        </ContainerGeral>
+        <p id="tempo">{this.props.song.tempo}</p>
+      </Container>
     );
   }
 }

@@ -32,11 +32,13 @@ export const Dados = styled.div`
     color: #ffffff;
     margin-top: 2rem;
   }
-
 `
 
 export const Musicas = styled.div`
     display: flex;
     flex-direction: column;
+    margin: 0 2rem;
+    width: 55%;
+    gap: 0.5rem;
 
 `
