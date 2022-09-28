@@ -5,12 +5,37 @@ export const ContainerGeral = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 1rem;
+
+  @media only screen and (max-width: 1904px) {
+    justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 1304px) {
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 1104px) {
+    justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 904px) {
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 769px) {
+    justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 664px) {
+    justify-content: space-around;
+  }
 `
 
 export const ContainerItem = styled.div`
   height: 14.5rem;
   width: 11.5rem;
-  margin: 1rem;
+  //margin: 1rem;
   padding: 0.8rem;
   background-color: #1e1e1e;
   display: flex;
@@ -50,10 +75,10 @@ export const ContainerItem = styled.div`
       color: #3dcf64;
     }
   }
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 464px) {
     height: 13rem;
     width: 9rem;
-    margin: 1rem 0.5rem;
+    //margin: 1rem 0.5rem;
 
     img {
       height: 5rem;
