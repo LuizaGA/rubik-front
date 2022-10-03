@@ -305,7 +305,7 @@ export const Search = styled.div`
     margin-left: 1px;
     height: 2.5rem;
     font-size: 14px;
-    background-image: url('/src/assets/icons/search.svg');
+    background-image: url('/assets/icons/search.svg');
     background-position: 8px;
     background-repeat: no-repeat;
     background-size: 14px;

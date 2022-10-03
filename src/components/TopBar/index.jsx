@@ -12,7 +12,7 @@ function TopBar() {
     <ContainerGeral>
       <LinkWrapper to="/">
         <ContainerLogo>
-            <img src="/src/assets/logo/logo.png" alt="logo so site" />
+            <img src="/assets/logo/logo.png" alt="logo so site" />
             <h2>rubik</h2>
         </ContainerLogo>
       </LinkWrapper>
@@ -22,20 +22,20 @@ function TopBar() {
             <img src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt="foto user"/>
             <p>Nome user</p>
           </ContainerUser>
-          <img src="/src/assets/icons/bars.png" alt="ícone menu" id="menu" onClick={() => setShowMenu(!showMenu)}/>
+          <img src="/assets/icons/bars.png" alt="ícone menu" id="menu" onClick={() => setShowMenu(!showMenu)}/>
         </>
         : 
         <Container>
           <LinkWrapper to="/registration"><p>Inscrever-se</p></LinkWrapper>
           <LinkWrapper to="/login"><Botao> Entrar </Botao></LinkWrapper>
-          <img src="/src/assets/icons/bars.png" alt="ícone menu"  onClick={() => setShowMenu(!showMenu)}/>
+          <img src="/assets/icons/bars.png" alt="ícone menu"  onClick={() => setShowMenu(!showMenu)}/>
         </Container>
       }
       
     </ContainerGeral>
     {showMenu && 
     <ContainerMobile>
-      <img src="/src/assets/icons/X.png" alt="fechar" onClick={() => setShowMenu(!showMenu)}/>
+      <img src="/assets/icons/X.png" alt="fechar" onClick={() => setShowMenu(!showMenu)}/>
       <LinkWrapper to="/login"><TextoMobileDestaque>Entre</TextoMobileDestaque></LinkWrapper>
       <LinkWrapper to="/registration"><TextoMobileDestaque>Inscreva-se</TextoMobileDestaque></LinkWrapper>
       <br/>
