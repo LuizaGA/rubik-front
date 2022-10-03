@@ -81,16 +81,16 @@ const MultiPlayer = ({ urls, info }) => {
 
 const Player = ({ player, toggle }) => (
   <Container>
-    <ContainerGeral>
+    <ContainerGeral id={ player.playing ? "tocando": ""}>
           <Botao onClick={toggle}>
             <img src={player.playing  ? Pause : Play }/>
           </Botao>
           <div>
             <p id="musica">{player.nomeMusica}</p>
-            <p id="artista">{player.nomeArtista}&nbsp; &nbsp; &nbsp;{player.album}</p>
+            <p id="artista" >{player.nomeArtista}&nbsp; &nbsp; &nbsp;{player.album}</p>
           </div>
         </ContainerGeral>
-        <p id="tempo">{player.tempo}</p>
+        <p id="tempo" >{player.tempo}</p>
   </Container>
 )
 

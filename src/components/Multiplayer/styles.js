@@ -20,7 +20,11 @@ export const Container = styled.div`
   }
 
   &:hover {
-    background-color: #1e1e1e;
+    background-color: #4a4a4a;
+  }
+
+  #tocando {
+    color: #3dcf64;
   }
 
 
