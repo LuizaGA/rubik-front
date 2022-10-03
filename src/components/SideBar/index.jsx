@@ -7,12 +7,12 @@ function SideBar() {
     <ContainerGeral>
       <LinkWrapper to="/">
         <ContainerLogo>
-            <img src="/src/assets/logo/logo.png" alt="logo so site" />
+            <img src="/assets/logo/logo.png" alt="logo so site" />
             <h2>rubik</h2>
         </ContainerLogo>
       </LinkWrapper>
       <div>
-        <LinkWrapper to="/">
+        <LinkWrapper to="/home">
           <ContainerItem>
             <img id="home" alt="" />
             <p>Início</p>

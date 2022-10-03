@@ -50,23 +50,23 @@ export const ContainerItem = styled.div`
   }
 
   #home {
-    content:url('src/assets/icons/home.svg');
+    content:url('/assets/icons/home.svg');
   }
 
   #search{
-    content:url('src/assets/icons/search-white.svg');
+    content:url('/assets/icons/search-white.svg');
   }
 
   #library{
-    content:url('src/assets/icons/library.svg');
+    content:url('/assets/icons/library.svg');
   }
 
   #playlist{
-    content:url('src/assets/icons/more.svg');
+    content:url('/assets/icons/more.svg');
   }
 
   #music{
-    content:url('src/assets/icons/heart.svg');
+    content:url('/assets/icons/heart.svg');
   }
 
   :hover {
@@ -80,23 +80,23 @@ export const ContainerItem = styled.div`
     }
 
     #home{
-      content:url('src/assets/icons/home-green.svg');
+      content:url('/assets/icons/home-green.svg');
     }
 
     #search{
-      content:url('src/assets/icons/search-green.svg');
+      content:url('/assets/icons/search-green.svg');
     }
 
     #library{
-      content:url('src/assets/icons/library-green.svg');
+      content:url('/assets/icons/library-green.svg');
     }
 
     #playlist{
-      content:url('src/assets/icons/more-green.svg');
+      content:url('/assets/icons/more-green.svg');
     }
 
     #music{
-      content:url('src/assets/icons/heart-green.svg');
+      content:url('/assets/icons/heart-green.svg');
     }
 
   }

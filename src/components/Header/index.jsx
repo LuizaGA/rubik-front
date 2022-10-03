@@ -10,7 +10,7 @@ function Header(){
     <ContainerGeral>
       <LinkWrapper to="/">
         <Container>
-        <Logo src='src/assets/logo/logo.png'alt="logo do site"/>
+        <Logo src='/assets/logo/logo.png'alt="logo do site"/>
         <NomeSite>Rubik</NomeSite>
         </Container>
       </LinkWrapper>
@@ -24,7 +24,7 @@ function Header(){
         <Item><LinkWrapper to="/registration">Inscrever-se</LinkWrapper></Item>
         <Item><LinkWrapper to="/login">Entrar</LinkWrapper></Item>
       </Lista>
-      <Menu src='/src/assets/icons/bars.png' alt="símbolo menu" onClick={() => setShowMenu(!showMenu)}/>
+      <Menu src='/assets/icons/bars.png' alt="símbolo menu" onClick={() => setShowMenu(!showMenu)}/>
       {showMenu && <HeaderMobile state={ setShowMenu }/> || null}
       </Container>
     </ContainerGeral>
