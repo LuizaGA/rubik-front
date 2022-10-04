@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import LinkWrapper from '../LinkWrapper' 
 import { ContainerGeral, Container, BtnFechar, Lista, ItemDestaque, Item} from './styles'
 
 
 function HeaderMobile({state}){
+
+  const [isLogged, setLogged] = useState(false)
+
   
   function closeMenu(){
     state(false)
@@ -17,10 +21,17 @@ function HeaderMobile({state}){
           <LinkWrapper to="/FAQ"><ItemDestaque>Suporte</ItemDestaque></LinkWrapper>
           <LinkWrapper to="/home"><ItemDestaque>Baixar</ItemDestaque></LinkWrapper>
         </Lista>
-        <Lista>
-          <Item><LinkWrapper to="/registration">Inscrever-se</LinkWrapper></Item>
-          <Item><LinkWrapper to="/login">Entrar</LinkWrapper></Item>
-        </Lista>
+          {isLogged ? 
+          <Lista>
+            <Item>Perfil</Item>
+            <Item>Sair</Item>
+          </Lista>
+          :
+            <Lista>
+              <Item><LinkWrapper to="/registration">Inscrever-se</LinkWrapper></Item>
+              <Item><LinkWrapper to="/login">Entrar</LinkWrapper></Item>
+            </Lista>
+          }
       </Container>
     </ContainerGeral>
   )

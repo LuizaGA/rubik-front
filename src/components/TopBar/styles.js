@@ -100,11 +100,12 @@ export const Botao = styled.div`
 `
 
 export const ContainerMobile = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
+  height: 100%;
+  min-height: 100vh;
   background-color: #000000;
   padding: 2rem;
 
