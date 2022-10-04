@@ -37,7 +37,7 @@ export const ContainerItem = styled.div`
   width: 11.5rem;
   //margin: 1rem;
   padding: 0.8rem;
-  background-color: #1e1e1e;
+  background-color: #2F2F2F;
   display: flex;
   flex-direction: column;
   border: none;

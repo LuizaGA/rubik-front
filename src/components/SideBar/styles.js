@@ -4,7 +4,7 @@ export const ContainerGeral = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 15rem;
-  background-color: #1e1e1e;
+  background-color: #2F2F2F;
   position: fixed;
   top: 0;
   padding-top: 3rem;

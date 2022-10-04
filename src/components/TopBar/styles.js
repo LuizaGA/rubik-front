@@ -147,7 +147,7 @@ export const ContainerUser = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #1e1e1e;
+  background-color: #2F2F2F;
   border-radius: 10rem;
   margin-right: 1rem;
   padding: 0.2rem 0.5rem;
@@ -164,11 +164,38 @@ export const ContainerUser = styled.div`
     margin-right: 0.5rem;
   }
 
+  #seta {
+    height: 1.5rem;
+    width: 1rem;
+  }
+
   :hover {
     cursor: pointer;
   }
 
   @media only screen and (max-width: 768px) {
     display: none;
+  }
+`
+export const MenuUser = styled.div`
+  background-color: #2F2F2F;
+  z-index: 1;
+  width: 11rem;
+  height: 5rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 3.5rem;
+  right: 2rem;
+  color: white;
+  padding: 1rem;
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p:hover {
+    color: #3dcf64;
+    cursor: pointer;
   }
 `
