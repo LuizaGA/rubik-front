@@ -114,6 +114,7 @@ export const ContainerMobile = styled.div`
     top: 20px;
     right: 20px;
     height: 2rem;
+    cursor: pointer;
   }
 `
 

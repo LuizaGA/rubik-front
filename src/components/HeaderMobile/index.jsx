@@ -23,7 +23,7 @@ function HeaderMobile({state}){
         </Lista>
           {isLogged ? 
           <Lista>
-            <Item>Perfil</Item>
+            <Item><LinkWrapper to="/perfil">Perfil</LinkWrapper></Item>
             <Item>Sair</Item>
           </Lista>
           :

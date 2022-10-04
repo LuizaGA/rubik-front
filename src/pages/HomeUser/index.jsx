@@ -3,7 +3,7 @@ import SideBar from "../../components/SideBar"
 import Playlists from "../../components/Playlists"
 import { ContainerGeral } from './styles'
 
-function User() {
+function HomeUser() {
 
   const dados = [
     {id:1, nome: 'All Out 2010s ', descricao: 'The biggest songs of th 2010s.', imagem: '/assets/playlists/capas/2010.webp'},
@@ -28,4 +28,4 @@ function User() {
   )
 }
 
-export default User
+export default HomeUser

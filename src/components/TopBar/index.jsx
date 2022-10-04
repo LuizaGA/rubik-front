@@ -36,9 +36,12 @@ function TopBar() {
     {showMenu && 
     <ContainerMobile>
       <img src="/assets/icons/X.png" alt="fechar" onClick={() => setShowMenu(!showMenu)}/>
+      <LinkWrapper to="/home"><TextoMobileDestaque>Início</TextoMobileDestaque></LinkWrapper>
+      <LinkWrapper to="/search"><TextoMobileDestaque>Buscar</TextoMobileDestaque></LinkWrapper>
+      <LinkWrapper to="/library"><TextoMobileDestaque>Biblioteca</TextoMobileDestaque></LinkWrapper>
       {isLogged ? 
       <>
-      <TextoMobileDestaque>Perfil</TextoMobileDestaque>
+      <LinkWrapper to="/perfil"><TextoMobileDestaque>Perfil</TextoMobileDestaque></LinkWrapper>
       <TextoMobileDestaque>Sair</TextoMobileDestaque>
       </>
       :
