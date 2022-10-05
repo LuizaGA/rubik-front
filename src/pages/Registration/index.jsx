@@ -51,7 +51,7 @@ function Registration() {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    });
+  });
 
   function handleRegistration(e){
     e.preventDefault();
