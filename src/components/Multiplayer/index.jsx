@@ -7,8 +7,8 @@ const useMultiAudio = urls => {
   const [sources] = useState(
     urls.map(url => {
       return {
-        url: url.caminho,
-        audio: new Audio(url.caminho),
+        url: url.playPath,
+        audio: new Audio(url.playPath),
       }
     }),
   )
@@ -16,11 +16,11 @@ const useMultiAudio = urls => {
   const [players, setPlayers] = useState(
     urls.map(url => {
       return {
-        url: url.caminho,
+        url: url.playPath,
         album: url.album, 
-        nomeMusica: url.nome,
-        nomeArtista: url.nomeArtista,
-        tempo: url.tempo,
+        nomeMusica: url.title,
+        nomeArtista: url.artist,
+        tempo: url.duration,
         playing: false,
       }
     }),
@@ -87,7 +87,7 @@ const Player = ({ player, toggle }) => (
           </Botao>
           <div>
             <p id="musica">{player.nomeMusica}</p>
-            <p id="artista" >{player.nomeArtista}&nbsp; &nbsp; &nbsp;{player.album}</p>
+            <p id="artista" >{player.nomeArtista}&nbsp; &nbsp;- &nbsp; &nbsp;{player.album}</p>
           </div>
         </ContainerGeral>
         <p id="tempo" >{player.tempo}</p>
