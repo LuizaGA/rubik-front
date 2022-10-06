@@ -7,8 +7,9 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding: 1rem;
+  padding: 0.5rem;
   cursor: default;
+  margin-bottom: 0.3rem;
 
   #musica {
     font-size: 1.2rem;
@@ -26,6 +27,10 @@ export const Container = styled.div`
   #tocando {
     color: #3dcf64;
   }
+
+  #tempo {
+      margin-left: 0.5rem;
+    }
 
 
   @media only screen and (max-width: 1300px) {
@@ -78,7 +83,6 @@ export const Container = styled.div`
     }
 
     #tempo {
-      margin-left: 0.5rem;
       font-size: 0.9rem;
     }
   }

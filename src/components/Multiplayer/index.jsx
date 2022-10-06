@@ -16,11 +16,13 @@ const useMultiAudio = urls => {
   const [players, setPlayers] = useState(
     urls.map(url => {
       return {
+        id: url._id,
         url: url.playPath,
         album: url.album, 
         nomeMusica: url.title,
         nomeArtista: url.artist,
         tempo: url.duration,
+        imagem: url.imagePath,
         playing: false,
       }
     }),
@@ -93,6 +95,5 @@ const Player = ({ player, toggle }) => (
         <p id="tempo" >{player.tempo}</p>
   </Container>
 )
-
 
 export default MultiPlayer

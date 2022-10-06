@@ -7,6 +7,8 @@ function TopBar() {
   const [showMenu, setShowMenu] = useState(false)
   const [optionsUser, setOptionsUser] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('token'))
+  const [name, setName] = useState(localStorage.getItem('name'))
+
   const navigate = useNavigate()
 
   function handleLogout(){
@@ -33,7 +35,7 @@ function TopBar() {
         <>
           <ContainerUser onClick={() => setOptionsUser(!optionsUser)}>
             <img src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt="foto user"/>
-            <p>Nome user</p>
+            <p>{name}</p>
             <img src={optionsUser ? "/assets/icons/up.svg" : "/assets/icons/down.svg" } id="seta"/>
           </ContainerUser>
           <img src="/assets/icons/bars.png" alt="ícone menu" id="menu" onClick={() => setShowMenu(!showMenu)}/>

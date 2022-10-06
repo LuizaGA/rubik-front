@@ -5,6 +5,7 @@ export const ContainerGeral = styled.div`
   padding-top: 4rem;
   background-color: #000000;
   padding-bottom: 1.5rem;
+  max-width: 2000px;
 
   display: flex;
   flex-direction: row;
