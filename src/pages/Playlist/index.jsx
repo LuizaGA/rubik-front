@@ -48,6 +48,7 @@ function Playlist(){
           <Dados>
             <img alt="capa" src={`data:image/png;charset=utf-8;base64,${playlist[0].imagePath}`}/>
             <h2>{playlist[0].name}</h2>
+            <p>{playlist[0].description}</p>
           </Dados>
           <Musicas>
             <MultiPlayer urls={playlist[0].songs}/>

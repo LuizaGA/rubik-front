@@ -28,9 +28,20 @@ export const Container = styled.div`
     color: #3dcf64;
   }
 
-  #tempo {
-      margin-left: 0.5rem;
+  #container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0.5rem;
+    gap: 0.5rem;
+
+    img {
+      padding: 0 0.5rem;
+      height: 1rem;
+      cursor: pointer;
     }
+  }
+
 
 
   @media only screen and (max-width: 1300px) {

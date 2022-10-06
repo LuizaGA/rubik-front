@@ -43,10 +43,20 @@ export const Dados = styled.div`
     margin-top: 2rem;
   }
 
+  p {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
 
   @media only screen and (max-width: 1300px) {
     h2 {
       font-size: 1.3rem;
+    }
+    p {
+      font-size: 0.9rem;
     }
   }
 
@@ -58,6 +68,10 @@ export const Dados = styled.div`
 
     h2 {
       font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
       margin-bottom: 2.5rem;
     }
 

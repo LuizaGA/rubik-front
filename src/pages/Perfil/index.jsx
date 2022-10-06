@@ -71,9 +71,9 @@ function Perfil() {
         <h2>Editar perfil</h2>
         <form onSubmit={handleEdit} ref={formRef}>
           <Label htmlFor="name">Nome:</Label>
-          <Input id='name' type="text" placeholder="Insira um nome de perfil." value={name} onChange={(e) => setName(e.target.value)} />
+          <Input id='name' type="text" value={name} onChange={(e) => setName(e.target.value)} />
           <Label htmlFor="email">Email:</Label>
-          <Input id="email" type="email" placeholder="Insira seu email." value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <Legenda>Data de nascimento: {editAniversario}</Legenda>
           <Label htmlFor="date">Alterar data de nascimento:</Label>
           <Input id="date" type="date" value={birthday} onChange={(e) => setBirthday(e.target.value)} />
@@ -90,7 +90,7 @@ function Perfil() {
             </LabelMenor>
           </ContainerGenero>
           <AreaSubmit>
-            <InputSubmit type="submit" value="Inscrever-se"/>
+            <InputSubmit type="submit" value="Editar"/>
           </AreaSubmit>  
           <ToastContainer />
         </form>

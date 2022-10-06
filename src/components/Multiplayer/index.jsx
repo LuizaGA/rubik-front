@@ -81,18 +81,25 @@ const MultiPlayer = ({ urls, info }) => {
   )
 }
 
+function teste(id){
+  console.log('id musica ', id)
+}
+
 const Player = ({ player, toggle }) => (
   <Container>
     <ContainerGeral id={ player.playing ? "tocando": ""}>
-          <Botao onClick={toggle}>
-            <img src={player.playing  ? Pause : Play }/>
-          </Botao>
-          <div>
-            <p id="musica">{player.nomeMusica}</p>
-            <p id="artista" >{player.nomeArtista}&nbsp; &nbsp;- &nbsp; &nbsp;{player.album}</p>
-          </div>
-        </ContainerGeral>
-        <p id="tempo" >{player.tempo}</p>
+      <Botao onClick={toggle}>
+        <img src={player.playing  ? Pause : Play }/>
+      </Botao>
+      <div>
+        <p id="musica">{player.nomeMusica}</p>
+        <p id="artista" >{player.nomeArtista}&nbsp; &nbsp;- &nbsp; &nbsp;{player.album}</p>
+      </div>
+    </ContainerGeral>
+    <div id="container">
+      <p id="tempo" >{player.tempo}</p>
+      <img src="/assets/icons/more-options.svg" onClick={() => teste(player.id)}/>
+    </div>
   </Container>
 )
 
