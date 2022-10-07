@@ -14,13 +14,33 @@ function CreatePlaylist() {
   const [description, setDescription] = useState("")
   const [image, setImage] = useState()
   const [isPublic, setIsPublic] = useState('true')
+  const [withImage, setWithImagew ] = useState(true)
 
-  const handlePublic = (e) => {
+  const handlePublic = async (e) => {
     setIsPublic(e.target.value);
   }
 
+  const notifyWarn = () => toast.warn('Por favor, escolha uma imagem', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  const notifySucess = () => toast.success('Playlist criada com sucesso', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
   function handleCreatePlaylist(e){
-    console.log(image)
     let publicPlaylist;
     e.preventDefault();
     if (isPublic === 'true'){
@@ -28,40 +48,26 @@ function CreatePlaylist() {
     } else {
       publicPlaylist = false
     }
-    console.log(publicPlaylist)
-    api.post('/playlist/create', {
-      name: name,
-      description: description,
-      createdBy: idUser,
-      image: image,
-      isPublic: publicPlaylist
-    }, {headers: {
-      "Authorization": `Bearer ${token}`
-    }}).then((res) => {
-      console.log('criada')
-    }).catch((err) => {
-      console.error(err)
-    })
-
-
-    // api.post(`/user/update/${idUser}`, {
-    //   name: name,
-    //   email: email,
-    //   birthday: birthday,
-    //   gender: genero,
-    // }, {headers: {
-    //   "Authorization": `Bearer ${token}`
-    // }}).then((res) => {
-    //   localStorage.setItem('name', res.data.name)
-    //   localStorage.setItem('email', res.data.email)
-    //   localStorage.setItem('birthday', res.data.birthday)
-    //   localStorage.setItem('gender', res.data.gender)
-    //   notifySucess();
-    // }).catch((err) => {
-    //   notifyWarn();
-    //   console.error(err)
-    // })
+    if (!image){
+      notifyWarn();
+    } else {
+      api.post('/playlist/create', {
+        name: name,
+        description: description,
+        createdBy: idUser,
+        image: image,
+        isPublic: publicPlaylist
+      }, {headers: {
+        "Content-Type": "multipart/form-data",
+        "Authorization": `Bearer ${token}`
+      }}).then((res) => {
+        notifySucess();
+      }).catch((err) => {
+        console.error(err)
+      })
+    }
   }
+
 
   return (
     <div style={{height:'100vh', backgroundColor: "#000000"}}>
@@ -75,9 +81,9 @@ function CreatePlaylist() {
           <Input id='name' type="text" placeholder="Insira o nome da playlist" value={name} onChange={(e) => setName(e.target.value)} required/>
           <Label htmlFor="description">Descrição:</Label>
           <InputText id="description" type="text" placeholder="Insira a descrição da playlist" rows="3" value={description} onChange={(e) => setDescription(e.target.value)} />
-          <Label>Imagem:</Label>
+          <Label >Imagem da capa:</Label>
           <InputImage>
-            <label htmlFor="image">Escolher arquivo</label>
+            <label htmlFor="image">{ image ? image.name :'Escolher arquivo'}</label>
             <input id="image" type="file" value={''} onChange={(e) => setImage(e.target.files[0])} />
           </InputImage>
           <Legenda>Essa playlist é pública? </Legenda>
@@ -90,7 +96,7 @@ function CreatePlaylist() {
             </LabelMenor>
           </ContainerGenero>
           <AreaSubmit>
-            <InputSubmit type="submit" value="Inscrever-se"/>
+            <InputSubmit type="submit" value="Criar"/>
           </AreaSubmit>  
           <ToastContainer />
         </form>
