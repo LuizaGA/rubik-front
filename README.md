@@ -38,7 +38,8 @@ npm run dev
 
 O projeto do backend ficará disponível na porta ``http://localhost:5001``
 
-Para instalar o frontend, clone o repositório do backend desse projeto, usando o comando:
+
+Para instalar o frontend, clone o repositório do frontend desse projeto, usando o comando:
 
 ```
 https://github.com/LuizaGA/rubik-front.git
