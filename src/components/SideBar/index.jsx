@@ -19,22 +19,24 @@ function SideBar() {
           </ContainerItem>
         </LinkWrapper>
         <LinkWrapper to="/search">
-        <ContainerItem>
-          <img id="search" alt="" />
-          <p>Buscar</p>
-        </ContainerItem>
+          <ContainerItem>
+            <img id="search" alt="" />
+            <p>Buscar</p>
+          </ContainerItem>
         </LinkWrapper>
         <LinkWrapper to="/library">
-        <ContainerItem>
-          <img id="library" alt="" />
-          <p>Sua Biblioteca</p>
-        </ContainerItem>
+          <ContainerItem>
+            <img id="library" alt="" />
+            <p>Sua Biblioteca</p>
+          </ContainerItem>
         </LinkWrapper>
         <br />
-        <ContainerItem>
-          <img id="playlist" alt="" />
-          <p>Criar playlist</p>
-        </ContainerItem>
+        <LinkWrapper to="/new-playlist">
+          <ContainerItem>
+            <img id="playlist" alt="" />
+            <p>Criar playlist</p>
+          </ContainerItem>
+        </LinkWrapper>
         <ContainerItem>
           <img id="music" alt="" />
           <p>Músicas Curtidas</p>

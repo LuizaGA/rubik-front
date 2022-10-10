@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react"
+import api from "../../services/api"
 import TopBar from "../../components/TopBar"
 import SideBar from "../../components/SideBar"
 import Playlists from "../../components/Playlists"
@@ -5,25 +7,49 @@ import { ContainerGeral } from './styles'
 
 function Library() {
 
-  const dados = [
-    {id:1, nome: 'All Out 2010s ', descricao: 'The biggest songs of th 2010s.', imagem: '/assets/playlists/capas/2010.webp'},
-    {id:2, nome: 'RapCaviar', descricao:'Music from Drake, Offset and 42 Dugg.', imagem: '/assets/playlists/capas/rap.jpg'},
-    {id:3, nome: 'Rock Classics', descricao:'Rock legends & epic songs that continue to inspire.', imagem: '/assets/playlists/capas/rock.jpg'},
-    {id:4, nome: 'Creative Focus', descricao:'Get your creative juices flowing with these ...', imagem: '/assets/playlists/capas/creative.jpg'},
-    {id:5, nome: 'Peaceful Piano', descricao:'Relax and indulfe with beautiful piano pieces.', imagem: '/assets/playlists/capas/piano.jpg'},
-    {id:6, nome: 'Deep Focus', descricao:'Keep calm and focus with ambient and post-rock...', imagem: '/assets/playlists/capas/focus.jpg'},
-    {id:7, nome: 'Instrumental Study', descricao:'A soft music backdrop for your studies', imagem: '/assets/playlists/capas/instrumental.png'},
-    {id:8, nome: 'Mood Booster', descricao:'Get happy with today dose of feel-good songs!', imagem: '/assets/playlists/capas/mood.avif'},   
-  ]
+  const [token, setToken] = useState(localStorage.getItem('token'))
+  const [userId, setUserId] = useState(localStorage.getItem('id'))
+
+  const [playlists, setPlaylists] = useState([])
+
+  function getPublicPlaylists(){
+    let dataPlaylists = [];
+    api.get(`/playlist/get_all_private/${userId}`, {headers: {
+      "Authorization": `Bearer ${token}`
+    }})
+    .then((res) => {
+      dataPlaylists = res.data;
+      for (let i = 0; i < dataPlaylists.length; i++) {
+        api.get(`/images/${dataPlaylists[i].imageId}`)
+        .then((res) => {
+          dataPlaylists[i].imagePath = res.data.image.image
+          setPlaylists(dataPlaylists);
+        }).catch((err) => {
+          console.error(err)
+        })
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+  }
+
+  useEffect(()=>{ getPublicPlaylists() }, [])
 
   return (
     <div style={{height:'100vh', backgroundColor: "#000000"}}>
       <TopBar />
       <SideBar />
-      <ContainerGeral>
-        <h2>Minha Biblioteca</h2>
-        <Playlists dados={dados}/>
-      </ContainerGeral>
+      {token ? 
+        <ContainerGeral>
+          <h2>Minha Biblioteca</h2>
+          <Playlists dados={playlists}/>
+        </ContainerGeral>
+      : 
+        <ContainerGeral>
+          <h4>Você tem que ter feito o login para ter acesso a esse recurso</h4>
+        </ContainerGeral>
+      }
     </div>
   )
 }

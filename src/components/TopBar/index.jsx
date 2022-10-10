@@ -1,11 +1,25 @@
-import LinkWrapper from '../LinkWrapper' 
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import LinkWrapper from '../LinkWrapper' 
 import { ContainerGeral, ContainerLogo, Container, Botao, ContainerMobile, TextoMobileDestaque, TextoMobile, ContainerUser, MenuUser } from './styles'
 
 function TopBar() {
   const [showMenu, setShowMenu] = useState(false)
   const [optionsUser, setOptionsUser] = useState(false);
-  const [isLogged, setLogged] = useState(true)
+  const [token, setToken] = useState(localStorage.getItem('token'))
+  const [name, setName] = useState(localStorage.getItem('name'))
+
+  const navigate = useNavigate()
+
+  function handleLogout(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('email')
+    localStorage.removeItem('gender')
+    localStorage.removeItem('name')
+    localStorage.removeItem('birthday')
+    localStorage.removeItem('id')
+    navigate('/')
+  }
 
 
   return (
@@ -17,11 +31,11 @@ function TopBar() {
             <h2>rubik</h2>
         </ContainerLogo>
       </LinkWrapper>
-        {isLogged ? 
+        {token ? 
         <>
           <ContainerUser onClick={() => setOptionsUser(!optionsUser)}>
             <img src="https://w7.pngwing.com/pngs/21/228/png-transparent-computer-icons-user-profile-others-miscellaneous-face-monochrome.png" alt="foto user"/>
-            <p>Nome user</p>
+            <p>{name}</p>
             <img src={optionsUser ? "/assets/icons/up.svg" : "/assets/icons/down.svg" } id="seta"/>
           </ContainerUser>
           <img src="/assets/icons/bars.png" alt="ícone menu" id="menu" onClick={() => setShowMenu(!showMenu)}/>
@@ -41,10 +55,10 @@ function TopBar() {
       <LinkWrapper to="/home"><TextoMobileDestaque>Início</TextoMobileDestaque></LinkWrapper>
       <LinkWrapper to="/search"><TextoMobileDestaque>Buscar</TextoMobileDestaque></LinkWrapper>
       <LinkWrapper to="/library"><TextoMobileDestaque>Biblioteca</TextoMobileDestaque></LinkWrapper>
-      {isLogged ? 
+      {token ? 
       <>
       <LinkWrapper to="/perfil"><TextoMobileDestaque>Perfil</TextoMobileDestaque></LinkWrapper>
-      <TextoMobileDestaque>Sair</TextoMobileDestaque>
+      <TextoMobileDestaque onClick={() => handleLogout()}>Sair</TextoMobileDestaque>
       </>
       :
       <>
@@ -63,7 +77,7 @@ function TopBar() {
     {optionsUser ?
     <MenuUser>
       <LinkWrapper to="/perfil"><p>Perfil</p></LinkWrapper>
-      <p>Sair</p>
+      <p onClick={() => handleLogout()}>Sair</p>
     </MenuUser>
     : null}
     </div>

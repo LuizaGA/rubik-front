@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import api from '../../services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LinkWrapper from '../../components/LinkWrapper'
@@ -50,7 +51,7 @@ function Registration() {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    });
+  });
 
   function handleRegistration(e){
     e.preventDefault();
@@ -61,30 +62,35 @@ function Registration() {
     } else if( !genero) {
       notifyWarn('Por favor, preencha todos os campos do formulário');
     } else {
-      let dados = {
+      api.post('/user/register', {
+        name: name,
         email: email,
-        senha: password,
-        nome: name,
-        aniversario: birthday,
-        genero: genero,
-        aceitaMarketing: marketing,
-        aceitaCompartilhar: compartilhar,
-        aceitaTermos: termos,
-      }
-      notifySucess();
-      console.log(dados);
-      formRef.current.reset();
-      setEmail('');
-      setConfEmail('');
-      setName('');
-      setPassword('');
-      setBirthday('');
-      setGenero('');
-      setMarketing(false);
-      setCompartilhar(false);
-      setTermos(false);
+        password: password,
+        birthday: birthday,
+        gender: genero,
+      })
+      .then((res) => {
+        notifySucess();
+        setEmail('');
+        setConfEmail('');
+        setName('');
+        setPassword('');
+        setBirthday('');
+        setGenero('');
+        setMarketing(false);
+        setCompartilhar(false);
+        setTermos(false);
+        formRef.current.reset();
+      })
+      .catch((err) =>{
+        notifyWarn('Cadastro não realizado');
+        console.error(err);
+        formRef.current.reset();
+      })
     }
   }
+
+
 
   return (
     <ContainerGeral>

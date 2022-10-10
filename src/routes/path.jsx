@@ -8,6 +8,7 @@ import Playlist from "../pages/Playlist";
 import Perfil from "../pages/Perfil";
 import Search from "../pages/Search";
 import Library from "../pages/Library";
+import CreatePlaylist from "../pages/CreatePlaylist";
 
 function Path(){
   return(
@@ -21,6 +22,8 @@ function Path(){
       <Route path="/perfil" element={<Perfil />} />
       <Route path="/search" element={<Search />} />
       <Route path="/library" element={<Library />} />
+      <Route path="/new-playlist" element={<CreatePlaylist />} />
+
     </Routes>
   )
 }

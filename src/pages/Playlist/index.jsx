@@ -1,111 +1,136 @@
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import api from "../../services/api";
+import { useParams, useNavigate } from "react-router-dom"
 import TopBar from "../../components/TopBar";
 import SideBar from "../../components/SideBar";
-import { ContainerGeral, Dados, Musicas } from './styles'
+import { Container, ContainerBotao, ContainerGeral, Dados, Musicas } from './styles'
 import MultiPlayer from "../../components/Multiplayer";
 
 function Playlist(){
   const params = useParams();
+  const navigate = useNavigate();
+  const [token, setToken] = useState(localStorage.getItem('token'))
+  const [idUser, setIdUser] = useState(localStorage.getItem('id'))
+  const [playlist, setPlaylist] = useState()
 
-  const dados = [
-    {id:1, nome: 'All Out 2010s ', descricao: 'The biggest songs of th 2010s.', imagem: '/assets/playlists/capas/2010.webp', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },
-    {id:2, nome: 'RapCaviar', descricao:'Music from Drake, Offset and 42 Dugg.', imagem: '/assets/playlists/capas/rap.jpg', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },
-    {id:3, nome: 'Rock Classics', descricao:'Rock legends & epic songs that continue to inspire.', imagem: '/assets/playlists/capas/rock.jpg', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
+  const notifyWarn = () => toast.warn('Erro', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  const notifySucess = () => toast.success('Playlist deletada com sucesso', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+
+  async function getPublicPlaylists(){
+    let dataPlaylist = [];
+    await api.get(`/playlist/get_playlist/${params.id}`)
+    .then((res) => {
+      dataPlaylist = res.data;
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+    if (dataPlaylist.length > 0) {
+      getImagePlaylist(dataPlaylist)
     }
-      ,
-    {id:4, nome: 'Creative Focus', descricao:'Get your creative juices flowing with these ...', imagem: '/assets/playlists/capas/creative.jpg', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },
-    {id:5, nome: 'Peaceful Piano', descricao:'Relax and indulfe with beautiful piano pieces.', imagem: '/assets/playlists/capas/piano.jpg', 
-      musica:[
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },
-    {id:6, nome: 'Deep Focus', descricao:'Keep calm and focus with ambient and post-rock...', imagem: '/assets/playlists/capas/focus.jpg', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },
-    {id:7, nome: 'Instrumental Study', descricao:'A soft music backdrop for your studies', imagem: '/assets/playlists/capas/instrumental.png', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },
-    {id:8, nome: 'Mood Booster', descricao:'Get happy with today dose of feel-good songs!', imagem: '/assets/playlists/capas/mood.avif', 
-      musica: [
-        {id: 1, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 2, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 3, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 4, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'},
-        {id: 5, caminho: '/assets/playlists/musicas/2cratch-SUPERLIFE.mp3', nome: 'Superlife', nomeArtista: '2Scratch', album:'nomeAlbum2', tempo: '3:10'}, 
-        {id: 6, caminho: '/assets/playlists/musicas/DjKantik-SeanPaul-Temperature.mp3', nome: 'Temperature', nomeArtista: 'Dj Kantik e Sean Paul', album:'nomeAlbum3', tempo: '3:50'},
-        {id: 7, caminho: '/assets/playlists/musicas/Naruto-HarukaKanata.mp3', nome: 'nomeMusica', nomeArtista: 'Haruka Kanata', album:'nomeAlbum', tempo: '3:42'} ],
-    },   
-  ]
+  }
 
-  const result = dados.find(({ id }) => id === parseInt(params.id));
+  async function getImagePlaylist(playlist){
+    let data = playlist
+    await api.get(`/images/${data[0].imageId}`)
+      .then((res) => {
+        data[0].imagePath = res.data.image.image;
+      }).catch((err) => {
+        console.error(err);
+      })
+    if (data[0].imagePath){
+      setPlaylist(data)
+    }
+  }
+
+  function deletePlaylist() {
+    api.delete(`/playlist/delete/${playlist[0]._id}`,
+    {headers: {
+      "Authorization": `Bearer ${token}`
+    }})
+    .then((res) => {
+      notifySucess();
+      navigate('/home')
+    }).catch((err) => {
+      console.error(err);
+      notifyWarn();
+    })
+  }
+
+  const handleDelete = () => {
+    if (window.confirm("Deseja realmente excluir?")) {
+      deletePlaylist()
+    }
+  };
+
+  useEffect(()=>{ getPublicPlaylists() }, [])
+
   return(
     <div style={{height:'100vh', backgroundColor: "#000000"}}>
       <TopBar />
       <SideBar />
-      {!!result ?
-        <ContainerGeral>
-          <Dados>
-            <img src={result.imagem} alt="capa"/>
-            <h2>{result.nome}</h2>
-          </Dados>
-          <Musicas>
-            <MultiPlayer urls={result.musica}/>
-          </Musicas>
-        </ContainerGeral>
+      {!!playlist ?
+        <Container >
+          { idUser == playlist[0].createdBy ?        
+            <ContainerBotao>
+              {/* <div style={{ border: '2px white solid'}}>
+                <img src="/assets/icons/plus.svg" alt=""/>
+                <p>Adicionar músicas</p>
+              </div> */}
+              <div style={{ border: '2px #D45151 solid'}} onClick={() => handleDelete()}>
+                <img src="/assets/icons/trash.svg" alt=""/>
+                <p style={{color: '#D45151'}}>Apagar playlist</p>
+              </div>
+            </ContainerBotao>
+          : null}
+          { playlist[0].isPublic ?        
+            <ContainerGeral>
+              <Dados>
+                <img alt="capa" src={`data:image/png;base64,${playlist[0].imagePath}`}/>
+                <h2>{playlist[0].name}</h2>
+                <p>{playlist[0].description}</p>
+              </Dados>
+              <Musicas>
+                <MultiPlayer urls={playlist[0].songs}/>
+              </Musicas>
+            </ContainerGeral>
+          : idUser == playlist[0].createdBy ?
+            <ContainerGeral>
+              <Dados>
+                <img alt="capa" src={`data:image/png;base64,${playlist[0].imagePath}`}/>
+                <h2>{playlist[0].name}</h2>
+                <p>{playlist[0].description}</p>
+              </Dados>
+              <Musicas>
+                <MultiPlayer urls={playlist[0].songs}/>
+              </Musicas>
+            </ContainerGeral>
+          :  
+            <ContainerGeral>
+              <h4>Essa playlist é privada</h4>
+            </ContainerGeral> 
+          }
+          <ToastContainer />
+        </Container>
       : null }
     </div>
   )

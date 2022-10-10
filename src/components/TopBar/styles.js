@@ -183,7 +183,7 @@ export const MenuUser = styled.div`
   width: 11rem;
   height: 5rem;
   border-radius: 10px;
-  position: absolute;
+  position: fixed;
   top: 3.5rem;
   right: 2rem;
   color: white;

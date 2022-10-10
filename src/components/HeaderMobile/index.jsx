@@ -5,8 +5,17 @@ import { ContainerGeral, Container, BtnFechar, Lista, ItemDestaque, Item} from '
 
 function HeaderMobile({state}){
 
-  const [isLogged, setLogged] = useState(false)
+  const [token, setToken] = useState(localStorage.getItem('token'))
 
+  function handleLogout(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('email')
+    localStorage.removeItem('gender')
+    localStorage.removeItem('name')
+    localStorage.removeItem('birthday')
+    localStorage.removeItem('id')
+    closeMenu()
+  }
   
   function closeMenu(){
     state(false)
@@ -21,10 +30,10 @@ function HeaderMobile({state}){
           <LinkWrapper to="/FAQ"><ItemDestaque>Suporte</ItemDestaque></LinkWrapper>
           <LinkWrapper to="/home"><ItemDestaque>Baixar</ItemDestaque></LinkWrapper>
         </Lista>
-          {isLogged ? 
+          {token ? 
           <Lista>
             <Item><LinkWrapper to="/perfil">Perfil</LinkWrapper></Item>
-            <Item>Sair</Item>
+            <Item onClick={() => handleLogout()}>Sair</Item>
           </Lista>
           :
             <Lista>
