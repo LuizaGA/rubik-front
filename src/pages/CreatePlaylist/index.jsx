@@ -14,7 +14,6 @@ function CreatePlaylist() {
   const [description, setDescription] = useState("")
   const [image, setImage] = useState()
   const [isPublic, setIsPublic] = useState('true')
-  const [withImage, setWithImagew ] = useState(true)
 
   const handlePublic = async (e) => {
     setIsPublic(e.target.value);
@@ -62,6 +61,10 @@ function CreatePlaylist() {
         "Authorization": `Bearer ${token}`
       }}).then((res) => {
         notifySucess();
+        setName("")
+        setDescription("")
+        setImage()
+        setIsPublic('true')
       }).catch((err) => {
         console.error(err)
       })
@@ -73,7 +76,7 @@ function CreatePlaylist() {
     <div style={{height:'100vh', backgroundColor: "#000000"}}>
       <TopBar />
       <SideBar />
-      {idUser ?     
+      {token ?     
       <ContainerGeral>
         <h2>Criar playlist</h2>
         <form onSubmit={handleCreatePlaylist} ref={formRef}>

@@ -13,6 +13,13 @@ export const ContainerGeral = styled.div`
     color: #ffffff;
   }
 
+  h4 {
+    color: white;
+    padding: 1rem 0 0 0;
+    margin: 5rem 0;
+    text-align: center;
+  }
+
   @media only screen and (max-width: 768px) {
     margin-left: 0;
 
