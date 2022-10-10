@@ -7,7 +7,7 @@ import { ContainerGeral } from './styles'
 function AddSong({music}){
   const [idUser, setIdUser] = useState(localStorage.getItem('id'))
   const [token, setToken] = useState(localStorage.getItem('token'))
-  const [ playlist, setPlaylist ] = useState()
+  const [ playlist, setPlaylist ] = useState([])
 
   const notifyWarn = () => toast.warn('Erro', {
     position: "top-right",
@@ -63,7 +63,7 @@ function AddSong({music}){
       { idUser ?    
         <ContainerGeral>
           <p>Adicionar "{music.nomeMusica} - {music.nomeArtista}" em:</p>
-            {playlist ? playlist.map(item => {
+            {playlist.length > 0 ? playlist.map(item => {
               return(
                 <div onClick={() => addSong( item._id, item.name )} key={item._id}>
                   <p> + {item.name}</p>
@@ -71,11 +71,11 @@ function AddSong({music}){
               )
             }) 
             :
-            <p>Primeiro crie uma playlist e depois adicione as músicas</p>
+            <span style={{color: 'red', fontSize:'0.7rem', marginLeft:'2rem'}}>Primeiro crie uma playlist e depois adicione as músicas</span>
             }
         </ContainerGeral>
       : 
-      <p>Você tem que ter feito o login para ter acesso a esse recurso</p>
+      <span style={{color: 'red', fontSize:'0.8rem', marginLeft:'2rem'}}>Você tem que ter feito login para ter acesso a esse recurso</span>
       }
       <ToastContainer />
     </div>
