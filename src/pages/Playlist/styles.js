@@ -11,6 +11,33 @@ export const Container = styled.div`
   flex-direction: column;
   color: white;
 
+  #delete {
+    background-color: #2F2F2F;
+    margin: 0 2rem 1rem 2rem;
+    padding: 1rem;
+    align-self: flex-end;
+    color: #D45151;
+
+    img {
+      height: 0.9rem;
+      margin-right: 0.5rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0.1rem 0;
+      padding: 0.05rem;
+      cursor: pointer;
+    }
+
+    div:hover {
+      background-color: black;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     margin-left: 0;
   }

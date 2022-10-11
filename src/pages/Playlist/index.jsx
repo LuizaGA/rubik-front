@@ -14,6 +14,8 @@ function Playlist(){
   const [token, setToken] = useState(localStorage.getItem('token'))
   const [idUser, setIdUser] = useState(localStorage.getItem('id'))
   const [playlist, setPlaylist] = useState()
+  const [deleteMusic, setDeleteMusic] = useState(false)
+
 
   const notifyWarn = () => toast.warn('Erro', {
     position: "top-right",
@@ -25,7 +27,7 @@ function Playlist(){
     progress: undefined,
   });
 
-  const notifySucess = () => toast.success('Playlist deletada com sucesso', {
+  const notifySucess = (text) => toast.success(text, {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -62,13 +64,30 @@ function Playlist(){
     }
   }
 
+  function removeMusic(id) {
+    api.put(`/playlist/removeSong`,{
+      playlistId:params.id,
+      songId : id
+    },
+    {headers: {
+      "Authorization": `Bearer ${token}`
+    }})
+    .then((res) => {
+      notifySucess('Música removida com sucesso');
+      window.location.reload()
+    }).catch((err) => {
+      console.error(err);
+      notifyWarn();
+    })
+  }
+
   function deletePlaylist() {
     api.delete(`/playlist/delete/${playlist[0]._id}`,
     {headers: {
       "Authorization": `Bearer ${token}`
     }})
     .then((res) => {
-      notifySucess();
+      notifySucess('Playlist deletada com sucesso');
       navigate('/home')
     }).catch((err) => {
       console.error(err);
@@ -92,15 +111,28 @@ function Playlist(){
         <Container >
           { idUser == playlist[0].createdBy ?        
             <ContainerBotao>
-              {/* <div style={{ border: '2px white solid'}}>
-                <img src="/assets/icons/plus.svg" alt=""/>
-                <p>Adicionar músicas</p>
-              </div> */}
+              <div style={{ border: '2px #D45151 solid'}} onClick={() => setDeleteMusic(!deleteMusic)}>
+                <img src="/assets/icons/trash.svg" alt=""/>
+                <p style={{color: '#D45151'}}>Remover músicas da playlist</p>
+              </div>
               <div style={{ border: '2px #D45151 solid'}} onClick={() => handleDelete()}>
                 <img src="/assets/icons/trash.svg" alt=""/>
                 <p style={{color: '#D45151'}}>Apagar playlist</p>
               </div>
             </ContainerBotao>
+          : null}
+          {deleteMusic ? 
+            <div id="delete">
+              <img src="/assets/icons/X.png" style={{cursor:'pointer'}} onClick={() => setDeleteMusic(false)}/>
+              {playlist[0].songs.map( music =>{
+                return(
+                  <div onClick={() => removeMusic(music._id)}>
+                    <img src="/assets/icons/trash.svg"/>
+                    <p>{music.title}</p>
+                  </div>
+                )
+              })}
+            </div>
           : null}
           { playlist[0].isPublic ?        
             <ContainerGeral>
