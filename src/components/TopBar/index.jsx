@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import LinkWrapper from '../LinkWrapper' 
 import { ContainerGeral, ContainerLogo, Container, Botao, ContainerMobile, TextoMobileDestaque, TextoMobile, ContainerUser, MenuUser } from './styles'
 
@@ -18,12 +20,27 @@ function TopBar() {
     localStorage.removeItem('name')
     localStorage.removeItem('birthday')
     localStorage.removeItem('id')
-    navigate('/')
+    notifySucess()
+    const myTimeout = setTimeout(reload, 4500)
   }
 
+  function reload() {
+    window.location.reload()
+  }
+
+  const notifySucess = () => toast.success('Você saiu do seu perfil', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   return (
     <div>
+    <ToastContainer />
     <ContainerGeral>
       <LinkWrapper to="/">
         <ContainerLogo>
@@ -47,7 +64,6 @@ function TopBar() {
           <img src="/assets/icons/bars.png" alt="ícone menu"  onClick={() => setShowMenu(!showMenu)}/>
         </Container>
       }
-      
     </ContainerGeral>
     {showMenu && 
     <ContainerMobile>
