@@ -4,30 +4,10 @@ export const ContainerGeral = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 1rem;
 
-  @media only screen and (max-width: 1904px) {
-    justify-content: flex-start;
-  }
-
-  @media only screen and (max-width: 1304px) {
-    justify-content: space-around;
-  }
-
-  @media only screen and (max-width: 1104px) {
-    justify-content: flex-start;
-  }
-
-  @media only screen and (max-width: 904px) {
-    justify-content: space-around;
-  }
-
-  @media only screen and (max-width: 769px) {
-    justify-content: flex-start;
-  }
-
-  @media only screen and (max-width: 664px) {
+  @media only screen and (max-width: 1650px) {
     justify-content: space-around;
   }
 `

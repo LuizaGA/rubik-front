@@ -74,11 +74,15 @@ function Playlist(){
     }})
     .then((res) => {
       notifySucess('Música removida com sucesso');
-      window.location.reload()
+      const myTimeout = setTimeout(reload, 4500)
     }).catch((err) => {
       console.error(err);
       notifyWarn();
     })
+  }
+  
+  function reload() {
+    window.location.reload()
   }
 
   function deletePlaylist() {
@@ -113,7 +117,7 @@ function Playlist(){
             <ContainerBotao>
               <div style={{ border: '2px #D45151 solid'}} onClick={() => setDeleteMusic(!deleteMusic)}>
                 <img src="/assets/icons/trash.svg" alt=""/>
-                <p style={{color: '#D45151'}}>Remover músicas da playlist</p>
+                <p style={{color: '#D45151'}}>Remover músicas</p>
               </div>
               <div style={{ border: '2px #D45151 solid'}} onClick={() => handleDelete()}>
                 <img src="/assets/icons/trash.svg" alt=""/>
@@ -128,7 +132,7 @@ function Playlist(){
                 return(
                   <div onClick={() => removeMusic(music._id)}>
                     <img src="/assets/icons/trash.svg"/>
-                    <p>{music.title}</p>
+                    <p>{music.title} - {music.artist}</p>
                   </div>
                 )
               })}

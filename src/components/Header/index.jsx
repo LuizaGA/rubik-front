@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import LinkWrapper from '../LinkWrapper' 
 import HeaderMobile from '../HeaderMobile'
 import {Container, ContainerGeral, Logo, NomeSite, Lista, Item, Menu} from './styles.js'
@@ -14,8 +16,23 @@ function Header(){
     localStorage.removeItem('name')
     localStorage.removeItem('birthday')
     localStorage.removeItem('id')
+    notifySucess()
+    const myTimeout = setTimeout(reload, 4500)
+  }
+
+  function reload() {
     window.location.reload()
   }
+
+  const notifySucess = () => toast.success('Você saiu do seu perfil', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
   return(
     <ContainerGeral>
@@ -44,6 +61,7 @@ function Header(){
       }
       <Menu src='/assets/icons/bars.png' alt="símbolo menu" onClick={() => setShowMenu(!showMenu)}/>
       {showMenu && <HeaderMobile state={ setShowMenu }/> || null}
+      <ToastContainer />
       </Container>
     </ContainerGeral>
   )
