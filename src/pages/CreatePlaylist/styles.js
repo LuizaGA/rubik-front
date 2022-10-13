@@ -90,6 +90,7 @@ export const InputSubmit = styled.input`
   font-size: 1rem;
   font-weight: 700;
   margin-top: 2rem;
+  cursor: pointer;
 `
 
 export const InputImage = styled.div`
