@@ -1,23 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import api from "../../services/api";
 import { useParams, useNavigate } from "react-router-dom"
 import TopBar from "../../components/TopBar";
 import SideBar from "../../components/SideBar";
-import { Container, ContainerBotao, ContainerGeral, Dados, Musicas } from './styles'
+import { Container, ContainerBotao, ContainerGeral, Dados, Musicas, PaginaModal } from './styles'
 import MultiPlayer from "../../components/Multiplayer";
 
 function Playlist(){
   const params = useParams();
   const navigate = useNavigate();
+  const formRef = useRef(null);
   const [token, setToken] = useState(localStorage.getItem('token'))
   const [idUser, setIdUser] = useState(localStorage.getItem('id'))
   const [playlist, setPlaylist] = useState()
   const [deleteMusic, setDeleteMusic] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
+  const [isPublic, setIsPublic] = useState()
 
-
-  const notifyWarn = () => toast.warn('Erro', {
+  const notifyWarn = (text) => toast.warn(text, {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
@@ -61,6 +65,9 @@ function Playlist(){
       })
     if (data[0].imagePath){
       setPlaylist(data)
+      setName(data[0].name)
+      setDescription(data[0].description)
+      setIsPublic(data[0].isPublic)
     }
   }
 
@@ -77,7 +84,7 @@ function Playlist(){
       const myTimeout = setTimeout(reload, 4500)
     }).catch((err) => {
       console.error(err);
-      notifyWarn();
+      notifyWarn('Erro');
     })
   }
   
@@ -95,7 +102,7 @@ function Playlist(){
       navigate('/home')
     }).catch((err) => {
       console.error(err);
-      notifyWarn();
+      notifyWarn('Erro');
     })
   }
 
@@ -104,6 +111,29 @@ function Playlist(){
       deletePlaylist()
     }
   };
+
+  function haldleEdit(e){
+    e.preventDefault();
+    console.log(name)
+    console.log(description)
+    console.log(isPublic)
+    api.put(`/playlist/update/${playlist[0]._id}`, {
+      name : name,
+      description: description,
+      isPublic: isPublic
+    },
+    {headers: {
+      "Authorization": `Bearer ${token}`
+    }}).then((res) => {
+      notifySucess('Playlist editada com sucesso');
+      setShowModal(false)
+      const myTimeout = setTimeout(reload, 4500)
+    }).catch((err) => {
+      console.error(err);
+      notifyWarn('Erro');
+    })
+
+  }
 
   useEffect(()=>{ getPublicPlaylists() }, [])
 
@@ -115,6 +145,10 @@ function Playlist(){
         <Container >
           { idUser == playlist[0].createdBy ?        
             <ContainerBotao>
+              <div style={{ border: '2px white solid'}} onClick={() => setShowModal(!showModal)}>
+                <img src="/assets/icons/edit.svg" alt=""/>
+                <p> Editar playlist</p>
+              </div>
               <div style={{ border: '2px #D45151 solid'}} onClick={() => setDeleteMusic(!deleteMusic)}>
                 <img src="/assets/icons/trash.svg" alt=""/>
                 <p style={{color: '#D45151'}}>Remover músicas</p>
@@ -168,6 +202,28 @@ function Playlist(){
           <ToastContainer />
         </Container>
       : null }
+      {showModal ? 
+        <PaginaModal>
+          <div>
+            <img src="/assets/icons/X.png" alt="fechar"  onClick={() => setShowModal(false)}/>
+              <form onSubmit={haldleEdit} ref={formRef}>
+                <label htmlFor="name">Nome:</label>
+                <input id='name' type="text" placeholder="Insira o nome da playlist" value={name} onChange={(e) => setName(e.target.value)} required/>
+                <label htmlFor="description">Descrição:</label>
+                <textarea id="description" type="text" placeholder="Insira a descrição da playlist" rows="3" value={description} onChange={(e) => setDescription(e.target.value)} />
+                <div id="public">
+                  <label>Trocar visibilidade:</label>
+                  <div onClick={() => setIsPublic(!isPublic)}>
+                    <label >{isPublic ? 'Tornar privada' : 'Tornar pública'}</label>
+                  </div>
+                </div>
+                <div>
+                  <input type="submit" value="Editar" id="botao"/>
+                </div>  
+              </form>
+          </div>
+        </PaginaModal>
+      : null}
     </div>
   )
 }

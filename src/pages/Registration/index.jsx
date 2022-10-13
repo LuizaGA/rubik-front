@@ -1,11 +1,13 @@
 import { useRef, useState } from 'react';
-import api from '../../services/api';
+import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import api from '../../services/api';
 import LinkWrapper from '../../components/LinkWrapper'
 import { ContainerGeral, ContainerLogo,Logo,  NomeSite, Texto, Label, Input, Legenda, LabelMenor, ContainerGenero, TextoObs, Span, InputSubmit } from './styles'
 
 function Registration() {
+  const navigate = useNavigate();
   const formRef = useRef(null);
   const [email, setEmail] = useState('');
   const [confEmail, setConfEmail] = useState('');
@@ -61,6 +63,8 @@ function Registration() {
       notifyWarn('Por favor, coloque o mesmo email nos dois campos');
     } else if( !genero) {
       notifyWarn('Por favor, preencha todos os campos do formulário');
+    } else if (password.length < 8) {
+      notifyWarn('A senha tem que ter no mínimo 8 caracteres');
     } else {
       api.post('/user/register', {
         name: name,
@@ -81,6 +85,7 @@ function Registration() {
         setCompartilhar(false);
         setTermos(false);
         formRef.current.reset();
+        const myTimeout = setTimeout(goLogin, 4500)
       })
       .catch((err) =>{
         notifyWarn('Cadastro não realizado');
@@ -89,6 +94,12 @@ function Registration() {
       })
     }
   }
+
+
+
+function goLogin() {
+  navigate('/login')
+}
 
 
 

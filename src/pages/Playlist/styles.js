@@ -189,3 +189,120 @@ export const Musicas = styled.div`
     width: 95%;
   }
 `
+//Modal
+
+export const PaginaModal = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(192,192,192,0.4);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  div {
+    background-color: #000000;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    border-radius: 1rem;
+
+    img {
+      height: 1.5rem;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    input, textarea {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      width: 100%;
+      border: 1px solid black;
+      border-radius: 4px;
+
+    }
+    
+    label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: block;  
+
+      ::placeholder {
+        font-size: 0.5rem;
+        font-family: 'Inter', sans-serif;
+      }
+    }
+
+    div {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }  
+
+    #public {
+      display: flex;
+      align-items: center;
+
+      div {
+        border: 2px white solid;
+        text-align: center;
+        padding: 0.3rem;
+        cursor: pointer;
+
+        label {
+          margin: 0 auto;
+          cursor: pointer;
+        }
+      }
+    }
+
+    #botao {
+      cursor: pointer;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 31rem;
+      background-color: #286b45;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    div {
+      min-width: 70%;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    div {
+      min-width: 80%;
+    }
+    #public {
+      max-width: 85%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    div {
+      min-width: 90%;
+    }
+
+    #public {
+     flex-direction: column;
+     width: 100%;
+     align-self: center;
+    }
+  }
+
+`
