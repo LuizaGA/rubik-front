@@ -13,10 +13,10 @@ function Playlists({dados}){
     <ContainerGeral>
       {dados ? dados.map(item => {
         return(
-          <ContainerItem key={item.id} onClick={() => {Redirecionar(item.id)}}>
-            <img src={item.imagem}/>
-            <h3>{item.nome}</h3>
-            <p>{item.descricao}</p>   
+          <ContainerItem key={item._id} onClick={() => {Redirecionar(item._id)}}>
+            <img src={`data:image/png;base64,${item.imagePath}`}/>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>   
           </ContainerItem>
         )}): null}  
     </ContainerGeral>

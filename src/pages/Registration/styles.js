@@ -41,6 +41,7 @@ export const NomeSite = styled.h3`
   font-size: 3rem;
   margin-left: 1rem;
   font-family: 'Silkscreen', cursive;
+  cursor: pointer;
 
   @media only screen and (max-width: 426px) {
     font-size: 2rem;

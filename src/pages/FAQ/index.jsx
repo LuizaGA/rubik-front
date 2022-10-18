@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { FirstContainer, SecondContainer, ThirdContainer, ContainerTexto, ThirdContainerTexto, ImgCubo, TextoSpotify, TextoDestaque, ThirdTextoDestaque, TextoSecundario, ThirdTextoSecundario, TextoObs, Botao, TextoBotao, Search } from './styles'
+import { useNavigate } from 'react-router-dom'
 
-import ArrowIcon from "../../../public/arrow-right.svg"
-import ArrowDownIcon from "../../../public/arrow-down.svg"
-import FamilyPlan from "../../../public/plano-familia.webp"
+import ArrowIcon from "../../assets/icons/arrow-right.svg"
+import ArrowDownIcon from "../../assets/icons/arrow-down.svg"
+import FamilyPlan from "../../assets/imagens/plano-familia.webp"
 
 function FAQ() {
 
@@ -17,6 +18,7 @@ function FAQ() {
   const [answer5, setAnswer5] = useState(false);
   const [answer6, setAnswer6] = useState(false);
 
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -26,7 +28,7 @@ function FAQ() {
         <ContainerTexto>
           <TextoSpotify>ATENDIMENTO DO RUBIK</TextoSpotify>
           <TextoDestaque>Como podemos ajudar?</TextoDestaque>
-          <TextoSecundario><u>Faça log in</u> para ter ajuda mais rápido</TextoSecundario>
+          <TextoSecundario><u onClick={() => navigate('/login')}>Faça log in</u> para ter ajuda mais rápido</TextoSecundario>
           <Search>
             <input type="text" placeholder="Buscar" onChange={(event) => {
               setSearchTerm(event.target.value);

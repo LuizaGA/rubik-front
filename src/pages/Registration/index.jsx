@@ -1,10 +1,13 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import api from '../../services/api';
 import LinkWrapper from '../../components/LinkWrapper'
 import { ContainerGeral, ContainerLogo,Logo,  NomeSite, Texto, Label, Input, Legenda, LabelMenor, ContainerGenero, TextoObs, Span, InputSubmit } from './styles'
 
 function Registration() {
+  const navigate = useNavigate();
   const formRef = useRef(null);
   const [email, setEmail] = useState('');
   const [confEmail, setConfEmail] = useState('');
@@ -50,7 +53,7 @@ function Registration() {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    });
+  });
 
   function handleRegistration(e){
     e.preventDefault();
@@ -60,39 +63,53 @@ function Registration() {
       notifyWarn('Por favor, coloque o mesmo email nos dois campos');
     } else if( !genero) {
       notifyWarn('Por favor, preencha todos os campos do formulário');
+    } else if (password.length < 8) {
+      notifyWarn('A senha tem que ter no mínimo 8 caracteres');
     } else {
-      let dados = {
+      api.post('/user/register', {
+        name: name,
         email: email,
-        senha: password,
-        nome: name,
-        aniversario: birthday,
-        genero: genero,
-        aceitaMarketing: marketing,
-        aceitaCompartilhar: compartilhar,
-        aceitaTermos: termos,
-      }
-      notifySucess();
-      console.log(dados);
-      formRef.current.reset();
-      setEmail('');
-      setConfEmail('');
-      setName('');
-      setPassword('');
-      setBirthday('');
-      setGenero('');
-      setMarketing(false);
-      setCompartilhar(false);
-      setTermos(false);
+        password: password,
+        birthday: birthday,
+        gender: genero,
+      })
+      .then((res) => {
+        notifySucess();
+        setEmail('');
+        setConfEmail('');
+        setName('');
+        setPassword('');
+        setBirthday('');
+        setGenero('');
+        setMarketing(false);
+        setCompartilhar(false);
+        setTermos(false);
+        formRef.current.reset();
+        const myTimeout = setTimeout(goLogin, 4500)
+      })
+      .catch((err) =>{
+        notifyWarn('Cadastro não realizado');
+        console.error(err);
+        formRef.current.reset();
+      })
     }
   }
+
+
+
+function goLogin() {
+  navigate('/login')
+}
+
+
 
   return (
     <ContainerGeral>
       <ContainerLogo>
       <LinkWrapper to="/">
-      <Logo src="logo_black.png" alt="logo" />
+      <Logo src="/assets/logo/logo_black.png" alt="logo" />
       </LinkWrapper>
-      <NomeSite>Rubik</NomeSite>
+      <NomeSite onClick={() => navigate('/')}>Rubik</NomeSite>
       </ContainerLogo>
       <Texto>Inscreva-se grátis e comece a curtir.</Texto>
       <form onSubmit={handleRegistration} ref={formRef}>

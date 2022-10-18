@@ -21,7 +21,7 @@ function Home() {
             <TextoObs>Somente no plano Individual. Depois, é só R$ 19,90/mês. Sujeito a Termos e Condições. Disponível apenas para quem nunca usou o Premium. Oferta válida até 11 de setembro de 2022.</TextoObs>
           </ContainerTexto>
           <div>
-            <ImgCubo src="cubo.png" alt="cubo derretendo" />
+            <ImgCubo src="/assets/imagens/cubo.png" alt="cubo derretendo" />
           </div>
           
       </ContainerGeral>

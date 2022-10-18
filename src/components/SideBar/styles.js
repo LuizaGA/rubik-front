@@ -4,7 +4,7 @@ export const ContainerGeral = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 15rem;
-  background-color: #1e1e1e;
+  background-color: #2F2F2F;
   position: fixed;
   top: 0;
   padding-top: 3rem;
@@ -49,7 +49,28 @@ export const ContainerItem = styled.div`
     height: 1rem;
   }
 
+  #home {
+    content:url('/assets/icons/home.svg');
+  }
+
+  #search{
+    content:url('/assets/icons/search-white.svg');
+  }
+
+  #library{
+    content:url('/assets/icons/library.svg');
+  }
+
+  #playlist{
+    content:url('/assets/icons/more.svg');
+  }
+
+  #music{
+    content:url('/assets/icons/heart.svg');
+  }
+
   :hover {
+
     color: #3dcf64;
     cursor: pointer;
 
@@ -58,9 +79,26 @@ export const ContainerItem = styled.div`
       cursor: pointer;
     }
 
-    img {
-      height: 1.5rem;
+    #home{
+      content:url('/assets/icons/home-green.svg');
     }
+
+    #search{
+      content:url('/assets/icons/search-green.svg');
+    }
+
+    #library{
+      content:url('/assets/icons/library-green.svg');
+    }
+
+    #playlist{
+      content:url('/assets/icons/more-green.svg');
+    }
+
+    #music{
+      content:url('/assets/icons/heart-green.svg');
+    }
+
   }
 `
 

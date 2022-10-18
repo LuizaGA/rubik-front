@@ -8,7 +8,7 @@ function Footer(){
       <Container>
         <LinkWrapper to="/">
           <ContainerLogo>
-            <Logo src="logo.png" alt="logo empresa" />
+            <Logo src="/assets/logo/logo.png" alt="logo empresa" />
             <NomeSite>Rubik</NomeSite>
           </ContainerLogo>
         </LinkWrapper>

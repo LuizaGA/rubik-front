@@ -4,19 +4,25 @@ export const ContainerGeral = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  @media only screen and (max-width: 1650px) {
+    justify-content: flex-start;
+  }
 `
 
 export const ContainerItem = styled.div`
   height: 14.5rem;
   width: 11.5rem;
-  margin: 1rem;
+  //margin: 1rem;
   padding: 0.8rem;
-  background-color: #1e1e1e;
+  background-color: #2F2F2F;
   display: flex;
   flex-direction: column;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem; 
+  cursor: pointer;
 
   img {
     height: 7rem;
@@ -39,14 +45,7 @@ export const ContainerItem = styled.div`
   }
 
   :hover {
-    /* height: 15.5rem;
-    width: 12.5rem;
-    justify-content: center;
-
-    img {
-      height: 8rem;
-      width: 11rem;
-    } */
+    background-color: #3C3C3C;
 
     h3 {
       color: #3dcf64;
@@ -56,10 +55,10 @@ export const ContainerItem = styled.div`
       color: #3dcf64;
     }
   }
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 464px) {
     height: 13rem;
     width: 9rem;
-    margin: 1rem 0.5rem;
+    //margin: 1rem 0.5rem;
 
     img {
       height: 5rem;
