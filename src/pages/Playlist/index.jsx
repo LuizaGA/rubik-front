@@ -83,7 +83,7 @@ function Playlist() {
       })
       .then((res) => {
         notifySucess('Música removida com sucesso');
-        const myTimeout = setTimeout(reload, 4500)
+        const myTimeout = setTimeout(reload, 3000)
       }).catch((err) => {
         console.error(err);
         notifyWarn('Erro');
@@ -133,7 +133,7 @@ function Playlist() {
       }).then((res) => {
         notifySucess('Playlist editada com sucesso');
         setShowModal(false)
-        const myTimeout = setTimeout(reload, 4500)
+        const myTimeout = setTimeout(reload, 3000)
       }).catch((err) => {
         console.error(err);
         notifyWarn('Erro');

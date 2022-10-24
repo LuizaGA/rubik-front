@@ -90,6 +90,7 @@ export const InputSubmit = styled.input`
   font-weight: 700;
   margin-left: 8rem;
   margin-top: 2rem;
+  cursor: pointer;
 
   @media only screen and (max-width: 520px) {
     margin-left: 6.5rem;

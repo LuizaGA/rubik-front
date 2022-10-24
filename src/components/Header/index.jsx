@@ -17,7 +17,7 @@ function Header(){
     localStorage.removeItem('birthday')
     localStorage.removeItem('id')
     notifySucess()
-    const myTimeout = setTimeout(reload, 4500)
+    const myTimeout = setTimeout(reload, 3000)
   }
 
   function reload() {

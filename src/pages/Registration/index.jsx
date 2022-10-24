@@ -85,7 +85,7 @@ function Registration() {
         setCompartilhar(false);
         setTermos(false);
         formRef.current.reset();
-        const myTimeout = setTimeout(goLogin, 4500)
+        const myTimeout = setTimeout(goLogin, 3000)
       })
       .catch((err) =>{
         notifyWarn('Cadastro não realizado');
