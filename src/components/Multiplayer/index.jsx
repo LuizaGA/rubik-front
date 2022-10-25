@@ -3,7 +3,7 @@ import { Container, Botao, ContainerGeral } from './styles';
 import AddSong from '../AddSong'
 import Play from '../../assets/icons/play.svg';
 import Pause from '../../assets/icons/pause.svg';
-
+import { useSong } from '../../context/song';
 
 const useMultiAudio = urls => {
   const [sources] = useState(

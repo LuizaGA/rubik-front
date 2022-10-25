@@ -1,12 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import { ContainerGeral, ContainerItem } from './styles'
+import { useSong } from '../../context/song';
 
 function Playlists({dados}){
+
+  const {ActivePlaylist, setActivePlaylist, setReload, reload} = useSong()
 
   const navigate = useNavigate();
 
   function Redirecionar(id) {
     navigate(`/playlist/${id}`);
+    setActivePlaylist(id);
   }
 
   return(
